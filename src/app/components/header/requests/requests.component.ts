@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { RequestItemMin } from "./../../../models/request_item.model";
+import { RequestsMinService } from "./../../../services/requests-min.service";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-requests",
@@ -7,7 +9,15 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class RequestsComponent implements OnInit {
   @Input() showRequests: boolean;
-  constructor() {}
+  @Output() closeRequests = new EventEmitter<boolean>();
+  listOfRequests: RequestItemMin[];
+  constructor(private requestsMinService: RequestsMinService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.listOfRequests = this.requestsMinService.getListOfRequests();
+  }
+  onCloseClick() {
+    this.showRequests = false;
+    this.closeRequests.emit(this.showRequests);
+  }
 }
