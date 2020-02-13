@@ -6,9 +6,11 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RequestsComponent } from './components/header/requests/requests.component';
+import { RequestItemComponent } from './components/shared/request-item/request-item.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, NotFoundComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, NotFoundComponent, RequestsComponent, RequestItemComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
