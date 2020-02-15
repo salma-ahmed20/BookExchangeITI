@@ -1905,8 +1905,9 @@ Elements Styles
 }
 
 .block-bg .close__wrap::after {
-    content: "\f136";
-    font-family: Material-Design-Iconic-Font;
+    content: "\f00d";
+    /* font-family: Material-Design-Iconic-Font; */
+    font-family: FontAwesome;
     font-size: 24px;
     position: absolute;
     right: 0;
