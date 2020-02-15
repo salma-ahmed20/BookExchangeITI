@@ -13,10 +13,21 @@
 @import url("plugins/pe-icon-7-stroke.css");
 @import url("plugins/slick.min.css");
 @import url("plugins/fakeloader.css");
-@import url("plugins/nivo-slider.css");
-@import url("plugins/nivo-preview-2.css");
-@import url("plugins/owl.carousel.min.css");
-@import url("plugins/owl.theme.default.min.css");
+
+/* @import url("plugins/nivo-slider.css"); */
+
+@import url(~nivo-slider/nivo-slider.css);
+
+/* @import url("plugins/nivo-preview-2.css"); */
+
+
+/* @import url("plugins/owl.carousel.min.css"); */
+
+@import url("~owl.carousel/dist/assets/owl.carousel.min.css");
+
+/* @import url("plugins/owl.theme.default.min.css"); */
+
+@import url("~owl.carousel/dist/assets/owl.theme.default.min.css");
 @import url("plugins/material-design-iconic-font.min.css");
 @import url("plugins/animation.css");
 @import url("plugins/fancybox.css");
