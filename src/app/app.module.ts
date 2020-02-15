@@ -11,19 +11,42 @@ import { SliderComponent } from './components/home/slider/slider.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RequestsComponent } from './components/header/requests/requests.component';
 import { RequestItemComponent } from './components/shared/request-item/request-item.component';
+
 import { UserComponent } from './components/user/user.component';
 import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
 import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
 import { UserhavebooksComponent } from './components/user/userhavebooks/userhavebooks.component';
 import { UserwantbooksComponent } from './components/user/userwantbooks/userwantbooks.component';
 
+import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
+import { BookItemComponent } from './components/shared/book-item/book-item.component';
+import { BookListComponent } from './components/home/book-list/book-list.component';
+import { UserListComponent } from './components/home/user-list/user-list.component';
+import { UserItemComponent } from './components/shared/user-item/user-item.component';
+
 
 
 @NgModule({
 
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, SliderComponent,
-    NotFoundComponent,RequestsComponent, RequestItemComponent, UserComponent, UserprofileComponent, UsereditprofileComponent, UserhavebooksComponent, UserwantbooksComponent],
 
+  declarations: [AppComponent, 
+    HeaderComponent, 
+    FooterComponent, 
+    HomeComponent, 
+    SliderComponent,
+    NotFoundComponent,
+    RequestsComponent, 
+    RequestItemComponent, 
+    BookdetailsComponent, 
+    BookItemComponent, 
+    BookListComponent, 
+    UserListComponent, 
+    UserItemComponent,
+    UserComponent, 
+    UserprofileComponent, 
+    UsereditprofileComponent, 
+    UserhavebooksComponent, 
+    UserwantbooksComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
