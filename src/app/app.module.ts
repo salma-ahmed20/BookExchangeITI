@@ -12,6 +12,10 @@ import { SliderComponent } from "./components/home/slider/slider.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { RequestsComponent } from "./components/header/requests/requests.component";
 import { RequestItemComponent } from "./components/shared/request-item/request-item.component";
+import { AddBookComponent } from "./components/book/add-book/add-book.component";
+import { ModalComponent } from "./components/shared/modal/modal.component";
+
+import { AutocompleteLibModule } from "angular-ng-autocomplete";
 
 @NgModule({
   declarations: [
@@ -23,10 +27,12 @@ import { RequestItemComponent } from "./components/shared/request-item/request-i
     NotFoundComponent,
     RequestsComponent,
     RequestItemComponent,
-    SearchPopupComponent
+    SearchPopupComponent,
+    AddBookComponent,
+    ModalComponent
   ],
 
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, AutocompleteLibModule],
   providers: [],
   bootstrap: [AppComponent]
 })
