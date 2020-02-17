@@ -15,17 +15,21 @@
                        #firstname='ngModel'
                         placeholder="Your First Name *" value=""/>
                         <div class="alert alert-danger" role="alert" 
-         *ngIf="firstname.touched &&!firstname.valid">this feild is required</div>
+         *ngIf="firstname.touched &&!firstname.valid">This feild is required</div>
                   </div>
                   <div class="form-group">
-                      <input type="text"ngModel name="password"
+                      <input type="text"ngModel name="Email"
                       required
-                       #password='ngModel'
+                       #Email='ngModel'
                        class="form-control"
-                        placeholder="Password *"
+                        placeholder="Your E-mail *"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                          value=""/>
                          <div class="alert alert-danger" role="alert" 
-                         *ngIf="password.touched &&!password.valid">this feild is required</div>
+                         *ngIf="Email.touched &&!Email.valid">this feild is required</div>
+                         <div class="alert alert-danger" role="alert"
+                         *ngIf="Email?.errors?.pattern">Doesn't match the pattern!</div>
+
                          
                   </div>
               </div>
@@ -42,29 +46,39 @@
                   </div>
 
                   <div class="form-group">
-                      <input type="text" class="form-control"
-                      required
-                      ngModel name="ConfirmPassword"
-                       #ConfirmPassword='ngModel'
-                       placeholder="Confirm Password *" value=""/>
-                       <div class="alert alert-danger" role="alert" 
-                         *ngIf="ConfirmPassword.touched &&!ConfirmPassword.valid">this feild is required</div>
-                         
-                  </div>
+                    <input type="password" class="form-control"
+                    required
+                    ngModel name="Password"
+                     #Password='ngModel'
+                     placeholder="Password*" value=""/>
+                     <div class="alert alert-danger" role="alert" 
+                       *ngIf="Password.touched && Password.invalid">this feild is required</div>
+                     
+                </div>
               </div>
           </div>
+
           <div class="row">
             <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Phone " value=""/>
-                </div>
+              <div class="form-group">
+                <input type="password" class="form-control"
+                required
+                ngModel name="ConfirmPassword"
+                 #ConfirmPassword='ngModel'
+                 placeholder="Confirm Password *" value=""/>
+                 <div class="alert alert-danger" role="alert" 
+                   *ngIf="ConfirmPassword.touched &&!ConfirmPassword.valid">this feild is required</div>
+                  <div class="alert alert-danger" role="alert"
+                  *ngIf="ConfirmPassword.touched && Password.value != ConfirmPassword.value">Your Password doesn't match! </div>
+            </div>
+             
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="City" value=""/>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Country" value=""/>
+                 <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Phone " value=""/>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Address" value=""/>

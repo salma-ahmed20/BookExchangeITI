@@ -17,6 +17,9 @@ import { RequestsComponent } from './components/header/requests/requests.compone
 import { RequestItemComponent } from './components/shared/request-item/request-item.component';
 import{LoginPageComponent} from './components/login-page/login-page.component'
 import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.comp
     BrowserModule, 
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([])
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
