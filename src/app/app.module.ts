@@ -16,6 +16,8 @@ import { AddBookComponent } from "./components/book/add-book/add-book.component"
 import { ModalComponent } from "./components/shared/modal/modal.component";
 
 import { AutocompleteLibModule } from "angular-ng-autocomplete";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,14 @@ import { AutocompleteLibModule } from "angular-ng-autocomplete";
     ModalComponent
   ],
 
-  imports: [BrowserModule, AppRoutingModule, AutocompleteLibModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AutocompleteLibModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
