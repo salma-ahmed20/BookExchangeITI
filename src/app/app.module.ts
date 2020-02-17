@@ -1,3 +1,4 @@
+import { SearchPopupComponent } from "./Components/search/search-popup/search-popup.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -15,16 +16,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { RequestsComponent } from './components/header/requests/requests.component';
 import { RequestItemComponent } from './components/shared/request-item/request-item.component';
-import{LoginPageComponent} from './components/login-page/login-page.component'
+import{ LoginPageComponent} from './components/login-page/login-page.component'
 import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { GenersComponent } from './components/geners/geners.component';
 
-
-
 @NgModule({
-
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -35,7 +33,8 @@ import { GenersComponent } from './components/geners/geners.component';
     RequestsComponent, 
     RequestItemComponent,
     LoginPageComponent, 
-    SignUpPageComponent, GenersComponent
+    SignUpPageComponent, 
+    GenersComponent,
   ],
 
   imports: [
