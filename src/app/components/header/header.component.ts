@@ -9,11 +9,24 @@ export class HeaderComponent implements OnInit {
   showRequests: boolean;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.searchToggler();
+  }
   onShowMinRequestsClick() {
     this.showRequests = true;
   }
   toggleRequestStates(event) {
     this.showRequests = event;
+  }
+  searchToggler() {
+    var trigger = $(".search__active"),
+      container = $(".search_active");
+    trigger.on("click", function(e) {
+      e.preventDefault();
+      container.toggleClass("is-visible");
+    });
+    $(".close__wrap").on("click", function() {
+      container.removeClass("is-visible");
+    });
   }
 }
