@@ -19,6 +19,7 @@ import{LoginPageComponent} from './components/login-page/login-page.component'
 import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { GenersComponent } from './components/geners/geners.component';
 
 
 
@@ -34,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     RequestsComponent, 
     RequestItemComponent,
     LoginPageComponent, 
-    SignUpPageComponent
+    SignUpPageComponent, GenersComponent
   ],
 
   imports: [
