@@ -32,12 +32,6 @@ import { UserprofileComponent } from './components/user/userprofile/userprofile.
 import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
 import { UserhavebooksComponent } from './components/user/userhavebooks/userhavebooks.component';
 import { UserwantbooksComponent } from './components/user/userwantbooks/userwantbooks.component';
-
-import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
-import { BookItemComponent } from './components/shared/book-item/book-item.component';
-import { BookListComponent } from './components/home/book-list/book-list.component';
-import { UserListComponent } from './components/home/user-list/user-list.component';
-import { UserItemComponent } from './components/shared/user-item/user-item.component';
 import { ChatComponent } from './components/user/chat/chat.component';
 import { SearchchatComponent } from './components/user/searchchat/searchchat.component';
 import { ComplaintsComponent } from './components/user/complaints/complaints.component';
