@@ -1,3 +1,4 @@
+import { UserModule } from './components/user/user.module';
 import { UserComponent } from './components/user/user.component';
 import { UserwantbooksComponent } from './components/user/userwantbooks/userwantbooks.component';
 import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
@@ -38,28 +39,21 @@ import { HttpClientModule } from "@angular/common/http";
     RequestsComponent,
     RequestItemComponent,
     SearchPopupComponent,
-    ModalComponent,
-    ChatComponent,
-    ComplaintsComponent,
-    SearchchatComponent,
-    UsereditprofileComponent,
-    UserhavebooksComponent,
-    UserprofileComponent,
-    UserwantbooksComponent,
-    UserComponent
-  ],
+    ModalComponent
+      ],
 
   imports: [
     BrowserModule,
-
     AutocompleteLibModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    UserModule,
     HomeModule,
     BookModule,
     LoginModule,
     SignUpModule,
+    
     AppRoutingModule
   ],
   providers: [],

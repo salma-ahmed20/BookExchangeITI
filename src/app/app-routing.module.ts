@@ -17,12 +17,6 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "book/add", component: AddBookComponent, outlet: "modalShared" },
   
-  { path: "user/profile", component: UserprofileComponent },
-  { path: "user/editprofile", component: UsereditprofileComponent },
-  { path: "user/wantedbooks", component: UserwantbooksComponent },
-  { path: "user/havedbooks", component: UserhavebooksComponent },
-  { path: "user/searchchat", component: SearchchatComponent },
-  { path: "user/complaint", component: ComplaintsComponent },
   { path: "**", pathMatch: "full", component: NotFoundComponent },
   
 ];
