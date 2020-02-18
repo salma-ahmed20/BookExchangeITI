@@ -41,7 +41,12 @@ import { UserItemComponent } from './components/shared/user-item/user-item.compo
     SearchPopupComponent,
 
     AddBookComponent,
-    ModalComponent
+    ModalComponent,
+    BookdetailsComponent, 
+    BookItemComponent, 
+    BookListComponent, 
+    UserListComponent, 
+    UserItemComponent
   ],
 
   imports: [
@@ -53,15 +58,8 @@ import { UserItemComponent } from './components/shared/user-item/user-item.compo
     HttpClientModule
   ],
 
-    BookdetailsComponent, 
-    BookItemComponent, 
-    BookListComponent, 
-    UserListComponent, 
-    UserItemComponent
-  ],
+  
 
-
-  imports: [BrowserModule, AppRoutingModule],
 
   providers: [],
   bootstrap: [AppComponent]
