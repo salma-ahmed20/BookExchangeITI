@@ -1,3 +1,12 @@
+import { UserModule } from './components/user/user.module';
+import { UserComponent } from './components/user/user.component';
+import { UserwantbooksComponent } from './components/user/userwantbooks/userwantbooks.component';
+import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
+import { UserhavebooksComponent } from './components/user/userhavebooks/userhavebooks.component';
+import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
+import { SearchchatComponent } from './components/user/searchchat/searchchat.component';
+import { ComplaintsComponent } from './components/user/complaints/complaints.component';
+import { ChatComponent } from './components/user/chat/chat.component';
 import { SignUpModule } from "./components/sign-up-page/signup.module";
 import { LoginModule } from "./components/login-page/login.module";
 import { BookModule } from "./components/book/book.module";
@@ -31,22 +40,22 @@ import { HttpClientModule } from "@angular/common/http";
     RequestItemComponent,
     SearchPopupComponent,
     ModalComponent
-  ],
+      ],
 
   imports: [
     BrowserModule,
-
     AutocompleteLibModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    UserModule,
     HomeModule,
     BookModule,
     LoginModule,
     SignUpModule,
+    
     AppRoutingModule
   ],
-
   providers: [],
   bootstrap: [AppComponent]
 })
