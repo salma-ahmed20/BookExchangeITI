@@ -1,3 +1,5 @@
+import { BookModule } from "./components/book/book.module";
+import { HomeModule } from "./components/home/home.module";
 import { SearchPopupComponent } from "./Components/search/search-popup/search-popup.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -7,41 +9,38 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 
-
-import { HomeComponent } from "./components/home/home.component";
-import { SliderComponent } from "./components/home/slider/slider.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { RequestsComponent } from "./components/header/requests/requests.component";
 import { RequestItemComponent } from "./components/shared/request-item/request-item.component";
 
-import { AddBookComponent } from "./components/book/add-book/add-book.component";
 import { ModalComponent } from "./components/shared/modal/modal.component";
 
 import { AutocompleteLibModule } from "angular-ng-autocomplete";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
-import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
-import { BookItemComponent } from './components/shared/book-item/book-item.component';
-import { BookListComponent } from './components/home/book-list/book-list.component';
-import { UserListComponent } from './components/home/user-list/user-list.component';
-import { UserItemComponent } from './components/shared/user-item/user-item.component';
-
+import { UserListComponent } from "./components/home/user-list/user-list.component";
+import { UserItemComponent } from "./components/shared/user-item/user-item.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    SliderComponent,
+    // HomeComponent,
+    // SliderComponent,
     NotFoundComponent,
     RequestsComponent,
     RequestItemComponent,
     SearchPopupComponent,
-
-    AddBookComponent,
+    // AddBookComponent,
     ModalComponent
+    // BookdetailsComponent,
+    // BookItemComponent,
+    // BookListComponent,
+    // UserListComponent,
+    // UserItemComponent
+    // ChangeBackgroundDirective
   ],
 
   imports: [
@@ -50,18 +49,11 @@ import { UserItemComponent } from './components/shared/user-item/user-item.compo
     AutocompleteLibModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HomeModule,
+    BookModule
+    // SharedModules
   ],
-
-    BookdetailsComponent, 
-    BookItemComponent, 
-    BookListComponent, 
-    UserListComponent, 
-    UserItemComponent
-  ],
-
-
-  imports: [BrowserModule, AppRoutingModule],
 
   providers: [],
   bootstrap: [AppComponent]

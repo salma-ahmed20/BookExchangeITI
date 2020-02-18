@@ -6,7 +6,6 @@ import { AddBookComponent } from "./components/book/add-book/add-book.component"
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "home", component: HomeComponent },
   { path: "book/add", component: AddBookComponent, outlet: "modalShared" },
   {
     path: "**",
