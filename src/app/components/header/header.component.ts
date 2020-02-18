@@ -12,7 +12,20 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.searchToggler();
+    this.mobileMenu();
+    this.stickyHeader();
   }
+  mobileMenu() {
+    ($("nav.mobilemenu__nav") as any).meanmenu({
+      meanMenuClose: "X",
+      meanMenuCloseSize: "18px",
+      meanScreenWidth: "991",
+      meanExpandableChildren: true,
+      meanMenuContainer: ".mobile-menu",
+      onePage: true
+    });
+  }
+
   onShowMinRequestsClick() {
     this.showRequests = true;
   }
@@ -30,8 +43,27 @@ export class HeaderComponent implements OnInit {
       container.removeClass("is-visible");
     });
   }
+
+  stickyHeader() {
+    $(window).on("scroll", function() {
+      var sticky_menu = $(".sticky__header");
+      var pos = sticky_menu.position();
+      if (sticky_menu.length) {
+        var windowpos = (sticky_menu as any).top;
+        $(window).on("scroll", function() {
+          var windowpos = $(window).scrollTop();
+          if (windowpos > pos.top + 250) {
+            sticky_menu.addClass("is-sticky");
+          } else {
+            sticky_menu.removeClass("is-sticky");
+          }
+        });
+      }
+    });
+  }
   test() {
     // [routerLink]='[{ outlets: { modalShared: ["book","add"] } }]'
     this.router.navigate([{ outlets: { modalShared: ["book", "add"] } }]);
+    // (click)="test()"
   }
 }

@@ -1,3 +1,4 @@
+import { LoginPageComponent } from "./components/login-page/login-page.component";
 import { HomeComponent } from "./components/home/home.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { NgModule } from "@angular/core";
@@ -14,7 +15,6 @@ import { SearchchatComponent } from './components/user/searchchat/searchchat.com
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "home", component: HomeComponent },
   { path: "book/add", component: AddBookComponent, outlet: "modalShared" },
   
   { path: "user/profile", component: UserprofileComponent },
