@@ -1,3 +1,4 @@
+import { LoginPageComponent } from "./components/login-page/login-page.component";
 import { HomeComponent } from "./components/home/home.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { NgModule } from "@angular/core";

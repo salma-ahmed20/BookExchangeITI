@@ -19,9 +19,6 @@ import { AutocompleteLibModule } from "angular-ng-autocomplete";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
-import { UserListComponent } from "./components/home/user-list/user-list.component";
-import { UserItemComponent } from "./components/shared/user-item/user-item.component";
-
 @NgModule({
   declarations: [
     AppComponent,
