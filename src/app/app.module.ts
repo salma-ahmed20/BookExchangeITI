@@ -1,3 +1,5 @@
+import { SignUpModule } from "./components/sign-up-page/signup.module";
+import { LoginModule } from "./components/login-page/login.module";
 import { BookModule } from "./components/book/book.module";
 import { HomeModule } from "./components/home/home.module";
 import { SearchPopupComponent } from "./Components/search/search-popup/search-popup.component";
@@ -33,13 +35,16 @@ import { HttpClientModule } from "@angular/common/http";
 
   imports: [
     BrowserModule,
-    AppRoutingModule,
+
     AutocompleteLibModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     HomeModule,
-    BookModule
+    BookModule,
+    LoginModule,
+    SignUpModule,
+    AppRoutingModule
   ],
 
   providers: [],
