@@ -29,6 +29,7 @@ import { ModalComponent } from "./components/shared/modal/modal.component";
 import { AutocompleteLibModule } from "angular-ng-autocomplete";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { ChatsComponent } from './chats/chats.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HttpClientModule } from "@angular/common/http";
     RequestsComponent,
     RequestItemComponent,
     SearchPopupComponent,
-    ModalComponent
+    ModalComponent,
+    ChatsComponent
       ],
 
   imports: [
@@ -53,7 +55,6 @@ import { HttpClientModule } from "@angular/common/http";
     BookModule,
     LoginModule,
     SignUpModule,
-    
     AppRoutingModule
   ],
   providers: [],

@@ -109,8 +109,10 @@
                         <a class="search__active" href="#"></a>
                     </li>
                     <li class="wishlist">
-                        <!-- <a data-toggle="modal" href="#sharedmodal" [routerLink]='[{ outlets:  { modalShared  : ["book/add"] } }]'></a> -->
-                        <!-- <a data-toggle="modal" [routerLink]='[{outlets: { modalShared: ["book","add"]}}]' href="#sharedmodal">add</a> -->
+
+                        <a class="cartbox_active" (click)="onShowMinRequestsClick()"><span class="product_qun">3</span></a>
+                        <!-- Start Shopping Cart -->
+                        <app-chats [showRequests]="showRequests" (closeRequests)="toggleRequestStates($event)"></app-chats>
                     </li>
                     <li class="shopcart">
                         <a class="cartbox_active" (click)="onShowMinRequestsClick()"><span class="product_qun">3</span></a>

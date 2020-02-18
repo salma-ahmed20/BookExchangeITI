@@ -6,6 +6,7 @@ import { ChangeBackgroundDirective } from "src/app/directives/change-background.
 import { BookItemComponent } from "./book-item/book-item.component";
 import { UserListComponent } from "../home/user-list/user-list.component";
 import { BookOverviewComponent } from './book-overview/book-overview.component';
+import { ChatItemComponent } from './chat-item/chat-item.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BookOverviewComponent } from './book-overview/book-overview.component';
     BookItemComponent,
     UserListComponent,
     UserItemComponent,
-    BookOverviewComponent
+    BookOverviewComponent,
+    ChatItemComponent
   ],
   imports: [CommonModule],
   exports: [
