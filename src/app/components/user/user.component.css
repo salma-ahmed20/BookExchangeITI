@@ -20,13 +20,16 @@ body {
     width: 200px;
     height: 100%;
     color: #e1ffff;
+    padding-top: 30px;
   }
   .nav-side-menu .brand1 {
     background: #333;
     line-height: 50px;
-    display: block;
-    text-align: center;
+    /* display: block;
+    text-align: center; */
+    padding-left: 10px;
     font-size: 14px;
+    
   }
   .nav-side-menu .brand1 .checked {
     color: orange;
@@ -128,29 +131,36 @@ body {
       position: relative;
       width: 100%;
       margin-bottom: 10px;
+      
     }
+    
+  .nav-side-menu .brand1 {
+    background: #333;
+    display: block;
+    text-align: center; 
+    padding-left: 50px;
+    text-align: left !important;
+    font-size: 20px;
+    line-height: 50px !important;
+  }
     .nav-side-menu .toggle-btn {
       display: block;
       cursor: pointer;
       position: absolute;
       right: 10px;
-      top: 10px;
+      top: 30px;
       z-index: 10 !important;
-      padding: 3px;
+      padding: 1px;
       background-color: #ffffff;
       color: #000;
       width: 40px;
       text-align: center;
     }
-    .brand1 {
-      text-align: left !important;
-      font-size: 22px;
-      padding-left: 20px;
-      line-height: 50px !important;
-    }
+   
   }
   @media (min-width: 767px) {
     .nav-side-menu .menu-list .menu-content {
       display: block;
+   
     }
   }

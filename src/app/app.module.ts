@@ -23,6 +23,9 @@ import { BookItemComponent } from './components/shared/book-item/book-item.compo
 import { BookListComponent } from './components/home/book-list/book-list.component';
 import { UserListComponent } from './components/home/user-list/user-list.component';
 import { UserItemComponent } from './components/shared/user-item/user-item.component';
+import { ChatComponent } from './components/user/chat/chat.component';
+import { SearchchatComponent } from './components/user/searchchat/searchchat.component';
+import { ComplaintsComponent } from './components/user/complaints/complaints.component';
 
 
 
@@ -46,7 +49,7 @@ import { UserItemComponent } from './components/shared/user-item/user-item.compo
     UserprofileComponent, 
     UsereditprofileComponent, 
     UserhavebooksComponent, 
-    UserwantbooksComponent],
+    UserwantbooksComponent, ChatComponent, SearchchatComponent, ComplaintsComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
