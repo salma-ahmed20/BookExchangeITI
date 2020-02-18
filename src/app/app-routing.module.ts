@@ -1,3 +1,4 @@
+import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
 import { HomeComponent } from "./components/home/home.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { NgModule } from "@angular/core";
@@ -7,8 +8,8 @@ const routes: Routes = [
 
   { path: "", component: HomeComponent },
   { path: "home", component: HomeComponent },
-  { path: "**", pathMatch: "full", component: NotFoundComponent }
-
+  {path:'bookdetails/:id',component:BookdetailsComponent},
+  { path: "**", pathMatch: "full", component: NotFoundComponent },
 ];
 
 @NgModule({

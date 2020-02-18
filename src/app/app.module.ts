@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
@@ -19,11 +20,15 @@ import { UserItemComponent } from './components/shared/user-item/user-item.compo
 
 
 
+
 @NgModule({
 
   declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, SliderComponent,NotFoundComponent,RequestsComponent, RequestItemComponent, BookdetailsComponent, BookItemComponent, BookListComponent, UserListComponent, UserItemComponent],
 
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
