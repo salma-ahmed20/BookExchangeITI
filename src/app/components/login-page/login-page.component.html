@@ -6,8 +6,6 @@
                     <h2 class="bradcaump-title">LogIn</h2>
                     <nav class="bradcaump-content">
                         <a class="breadcrumb_item" href="">Home</a>
-                        <span class="brd-separetor">/</span>
-                        <span class="breadcrumb_item active">404</span>
                     </nav>
                 </div>
             </div>
@@ -15,7 +13,7 @@
     </div>
 </div>
 
-<div class="container login-container">
+<!-- <div class="container login-container">
     <div class="row">
         <div class="col-md-6 login-form-1">
             <h3>Login Form</h3>
@@ -40,3 +38,37 @@
             </form>
         </div>
     </div>
+</div> -->
+
+
+<div class="container pt--80 pb--55 bg--white">
+    <div class="row justify-content-center ">
+        <div class="my__account__wrapper col-6 ">
+            <form [formGroup]="form">
+                <div class="account__form">
+                    <div class="input__box">
+                        <label>Username or email address <span>*</span></label>
+                        <input formControlName="email" id="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" class="form-control" placeholder="Your Email*" />
+                        <div *ngIf="form.controls.email?.touched && !form.controls.email?.valid" class="alert alert-danger">
+                            This Field Required
+                        </div>
+                    </div>
+                    <div class="input__box">
+                        <label>Password<span>*</span></label>
+                        <input formControlName="Password" id="password" type="password" class="form-control" placeholder="Your Password*" />
+                        <div *ngIf="form.controls.Password.touched&& !form.controls.Password.valid" class="alert alert-danger">This feild is required </div>
+
+                    </div>
+                    <div class="form__btn">
+                        <button>Login</button>
+                        <label class="label-for-checkbox">
+                        <input id="rememberme" class="input-checkbox" name="rememberme" value="forever" type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    </div>
+                    <a class="forget_pass" href="#">Lost your password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
