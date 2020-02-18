@@ -27,6 +27,16 @@ import { BookListComponent } from './components/home/book-list/book-list.compone
 import { UserListComponent } from './components/home/user-list/user-list.component';
 import { UserItemComponent } from './components/shared/user-item/user-item.component';
 
+import { UserComponent } from './components/user/user.component';
+import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
+import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
+import { UserhavebooksComponent } from './components/user/userhavebooks/userhavebooks.component';
+import { UserwantbooksComponent } from './components/user/userwantbooks/userwantbooks.component';
+import { ChatComponent } from './components/user/chat/chat.component';
+import { SearchchatComponent } from './components/user/searchchat/searchchat.component';
+import { ComplaintsComponent } from './components/user/complaints/complaints.component';
+
+
 
 @NgModule({
   declarations: [
@@ -39,14 +49,21 @@ import { UserItemComponent } from './components/shared/user-item/user-item.compo
     RequestsComponent,
     RequestItemComponent,
     SearchPopupComponent,
-
     AddBookComponent,
     ModalComponent,
     BookdetailsComponent, 
     BookItemComponent, 
     BookListComponent, 
     UserListComponent, 
-    UserItemComponent
+    UserItemComponent,
+    UserComponent, 
+    UserprofileComponent, 
+    UsereditprofileComponent, 
+    UserhavebooksComponent, 
+    UserwantbooksComponent, 
+    ChatComponent, 
+    SearchchatComponent, 
+    ComplaintsComponent
   ],
 
   imports: [
@@ -57,10 +74,7 @@ import { UserItemComponent } from './components/shared/user-item/user-item.compo
     ReactiveFormsModule,
     HttpClientModule
   ],
-
   
-
-
   providers: [],
   bootstrap: [AppComponent]
 })
