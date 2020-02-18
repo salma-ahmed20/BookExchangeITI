@@ -27,20 +27,11 @@ import { UserItemComponent } from "./components/shared/user-item/user-item.compo
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    // HomeComponent,
-    // SliderComponent,
     NotFoundComponent,
     RequestsComponent,
     RequestItemComponent,
     SearchPopupComponent,
-    // AddBookComponent,
     ModalComponent
-    // BookdetailsComponent,
-    // BookItemComponent,
-    // BookListComponent,
-    // UserListComponent,
-    // UserItemComponent
-    // ChangeBackgroundDirective
   ],
 
   imports: [
@@ -52,7 +43,6 @@ import { UserItemComponent } from "./components/shared/user-item/user-item.compo
     HttpClientModule,
     HomeModule,
     BookModule
-    // SharedModules
   ],
 
   providers: [],
