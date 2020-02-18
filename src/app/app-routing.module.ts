@@ -24,11 +24,7 @@ const routes: Routes = [
   { path: "user/searchchat", component: SearchchatComponent },
   { path: "user/complaint", component: ComplaintsComponent },
   { path: "**", pathMatch: "full", component: NotFoundComponent },
-  {
-    path: "**",
-    pathMatch: "full",
-    component: NotFoundComponent
-  },
+  
 ];
 
 @NgModule({
