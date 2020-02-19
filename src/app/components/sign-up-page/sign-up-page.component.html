@@ -12,7 +12,7 @@
         </div>
     </div>
 </div>
-
+<!-- 
 <div class="container register-form">
     <div class="form">
         <div class="note"></div>
@@ -69,7 +69,8 @@
             <button type="button" class="btnSubmit">Sign Up</button>
         </div>
     </div>
-</div>
+</div> -->
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-12 col-12">
@@ -92,26 +93,60 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group input__box">
-                                    <input type="email" ngModel name="Email" required #Email2='ngModel' class="form-control" placeholder="Your E-mail *" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="" />
-                                    <div class="alert alert-danger" role="alert" *ngIf="Email2.touched && Email2.errors?.required">this feild is required</div>
-                                    <div class="alert alert-danger" role="alert" *ngIf="Email2.errors?.pattern">This is not a valid Email2!!!</div>
+                                    <input type="email" ngModel name="Email" required #Email='ngModel' class="form-control" placeholder="Your E-mail *" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="" />
+                                    <div class="alert alert-danger" role="alert" *ngIf="Email.touched && Email.errors?.required">this feild is required</div>
+                                    <div class="alert alert-danger" role="alert" *ngIf="Email.errors?.pattern">This is not a valid Email!!!</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group input__box">
+                                    <input type="email" ngModel name="ConfirmEmail" required #ConfirmEmail='ngModel' class="form-control" placeholder="Confirm Your E-mail *" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="" />
+                                    <div class="alert alert-danger" role="alert" *ngIf="ConfirmEmail.touched && ConfirmEmail.errors?.required">this feild is required</div>
+                                    <div class="alert alert-danger" role="alert" *ngIf="ConfirmEmail.errors?.pattern">This is not a valid Email!!!</div>
+                                    <div class="alert alert-danger" role="alert" *ngIf="ConfirmEmail.value != Email.value">Both Emails do not Match!! </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group input__box">
+                                    <input type="password" class="form-control" required ngModel name="Password" #Password='ngModel' placeholder="Password*" value="" />
+                                    <div class="alert alert-danger" role="alert" *ngIf="Password.touched && Password.invalid">this feild is required</div>
+
                                 </div>
                             </div>
 
+                            <div class="col-md-6">
+                                <div class="form-group input__box">
+                                    <input type="password" class="form-control" required ngModel name="ConfirmPassword" #ConfirmPassword='ngModel' placeholder="Confirm Password *" value="" />
+                                    <div class="alert alert-danger" role="alert" *ngIf="ConfirmPassword.touched &&!ConfirmPassword.valid">this feild is required</div>
+                                    <div class="alert alert-danger" role="alert" *ngIf="ConfirmPassword.touched && Password.value != ConfirmPassword.value">Your Password doesn't match! </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group input__box">
+                                    <input type="text" class="form-control" placeholder="City" value="" />
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group input__box">
+                                    <input type="number" class="form-control" placeholder="Phone " value="" minlength="10" maxlength="10" />
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group input__box">
+                                    <input type="text" class="form-control" placeholder="Address" value="" />
+
+                                </div>
+                            </div>
 
                         </div>
-
-
-                        <div class="input__box">
-                            <label>Email address <span>*</span></label>
-                            <input type="email">
-                        </div>
-                        <div class="input__box">
-                            <label>Password<span>*</span></label>
-                            <input type="password">
-                        </div>
-                        <div class="form__btn">
-                            <button>Register</button>
+                        <div class="row justify-content-center">
+                            <div class="form__btn col-5">
+                                <button>Register</button>
+                            </div>
                         </div>
                     </div>
                 </form>
