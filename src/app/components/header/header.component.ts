@@ -1,3 +1,4 @@
+import { LoginService } from "./../../services/user/login/login.service";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
@@ -8,12 +9,20 @@ import { Router } from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   showRequests: boolean;
-  constructor(private router: Router) {}
+  showLoginAndSignUp: boolean = true;
+  constructor(private router: Router, private login: LoginService) {}
 
   ngOnInit() {
     this.searchToggler();
     this.mobileMenu();
     this.stickyHeader();
+    this.login.isLoggedIn();
+    this.login.loggedIn.subscribe(res => {
+      console.log(res);
+
+      this.showLoginAndSignUp = !res;
+    });
+    this.login.isLoggedIn();
   }
   mobileMenu() {
     ($("nav.mobilemenu__nav") as any).meanmenu({
