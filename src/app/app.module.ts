@@ -13,7 +13,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
-
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { RequestsComponent } from "./components/header/requests/requests.component";
 import { RequestItemComponent } from "./components/shared/request-item/request-item.component";
@@ -23,6 +22,7 @@ import { ModalComponent } from "./components/shared/modal/modal.component";
 import { AutocompleteLibModule } from "angular-ng-autocomplete";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { GenersComponent } from "./components/geners/geners.component";
 
 @NgModule({
   declarations: [
@@ -32,6 +32,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
     NotFoundComponent,
     RequestsComponent,
     RequestItemComponent,
+    GenersComponent,
     SearchPopupComponent,
     ModalComponent
   ],
