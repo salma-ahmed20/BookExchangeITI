@@ -1,44 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import{ActivatedRoute} from '@angular/router';
-import { GenBooksService } from 'src/app/services/genreBooks/gen-books.service';
+import { Book } from "./../../models/book_item.model";
+import { GenreService } from "./../../services/gener/genre.service";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-genre-books',
-  templateUrl: './genre-books.component.html',
-  styleUrls: ['./genre-books.component.css']
+  selector: "app-genre-books",
+  templateUrl: "./genre-books.component.html",
+  styleUrls: ["./genre-books.component.css"]
 })
 export class GenreBooksComponent implements OnInit {
-id;
-books:any;
+  books: Book[];
 
-
-  constructor(private route:ActivatedRoute,private service:GenBooksService){
-
-  }
+  constructor(private route: ActivatedRoute, private service: GenreService) {}
   ngOnInit() {
-  this.service.getBooks()
-  .subscribe(response=>{
-
-   
-  });
-
-    this.route.paramMap['id']
-    this.route.paramMap.subscribe(params=>{
-    this.id = +params.get('id');
-    this.books=[
-      { id:1,name:"book "+this.id},
-      { id:2,name:"book "+this.id},
-      { id:3,name:"book "+this.id},
-      { id:4,name:"book " +this.id},
-      
-    ]
+    this.route.params.subscribe(params => {
+      let id = params["id"];
+      this.service.getBookByGenreId(id).subscribe(res => {
+        this.books = res[0];
+      });
+    });
   }
-
-  
-  
-  
-  
- 
-     
- 
-    )}}
+}

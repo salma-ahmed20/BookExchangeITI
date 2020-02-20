@@ -28,6 +28,7 @@ import { ModalModule } from "./_modal";
     UserListComponent,
     UserItemComponent,
     BooklistComponent,
+    BookOverviewComponent,
     CommonModule,
     ModalModule
   ]

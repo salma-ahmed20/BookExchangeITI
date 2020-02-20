@@ -1,7 +1,4 @@
-export class Genres{
-    book_id;
-    book_name;
-
-
+export class Genre {
+  Genre_Id;
+  Genre_Name;
 }
-
