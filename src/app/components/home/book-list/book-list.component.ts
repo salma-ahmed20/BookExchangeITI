@@ -1,12 +1,41 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Book } from "src/app/models/book_item.model";
+import { BooksService } from "./../../../services/book/books.service";
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  AfterContentChecked,
+  ViewChildren,
+  QueryList
+} from "@angular/core";
 
 @Component({
   selector: "app-book-list",
   templateUrl: "./book-list.component.html",
   styleUrls: ["./book-list.component.css"]
 })
-export class BookListComponent implements OnInit, AfterViewInit {
+export class BookListComponent
+  implements OnInit, AfterViewInit, AfterContentChecked {
+  @ViewChildren("allTheseThings") things: QueryList<any>;
+  ngAfterContentChecked(): void {
+    // this.  owl();
+  }
   ngAfterViewInit(): void {
+    this.things.changes.subscribe(ww => {
+      this.owl();
+    });
+  }
+
+  books: Book[];
+
+  constructor(private service: BooksService) {}
+
+  ngOnInit() {
+    this.service.getAllBooks().subscribe(res => {
+      this.books = res;
+    });
+  }
+  owl() {
     ($(".furniture--4") as any).owlCarousel({
       loop: true,
       margin: 0,
@@ -39,19 +68,4 @@ export class BookListComponent implements OnInit, AfterViewInit {
       }
     });
   }
-  books = [
-    { id: 1, name: "img1" },
-    { id: 4, name: "img4" },
-    { id: 3, name: "img3" },
-    { id: 5, name: "img5" },
-    { id: 5, name: "img5" },
-    { id: 5, name: "img5" },
-    { id: 5, name: "img5" }
-  ];
-
-  constructor() {
-    console.log(this.books);
-  }
-
-  ngOnInit() {}
 }
