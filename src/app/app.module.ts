@@ -20,6 +20,14 @@ import { SliderComponent } from "./components/home/slider/slider.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { RequestsComponent } from "./components/header/requests/requests.component";
 import { RequestItemComponent } from "./components/shared/request-item/request-item.component";
+
+import { AddBookComponent } from "./components/book/add-book/add-book.component";
+import { ModalComponent } from "./components/shared/modal/modal.component";
+
+import { AutocompleteLibModule } from "angular-ng-autocomplete";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+
 import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
 import { BookItemComponent } from './components/shared/book-item/book-item.component';
 import { BookListComponent } from './components/home/book-list/book-list.component';
@@ -27,7 +35,6 @@ import { UserListComponent } from './components/home/user-list/user-list.compone
 import { UserItemComponent } from './components/shared/user-item/user-item.component';
 import { GenreBooksComponent } from './components/genre-books/genre-books.component';
 import { GenBooksService } from './services/genreBooks/gen-books.service';
-
 
 
 @NgModule({
@@ -42,6 +49,20 @@ import { GenBooksService } from './services/genreBooks/gen-books.service';
     RequestItemComponent,   
     GenersComponent,
     SearchPopupComponent,
+
+    AddBookComponent,
+    ModalComponent
+  ],
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AutocompleteLibModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+
     BookdetailsComponent, 
     BookItemComponent, 
     BookListComponent, 
@@ -51,6 +72,7 @@ import { GenBooksService } from './services/genreBooks/gen-books.service';
     SignUpPageComponent, GenreBooksComponent,
     
   ],
+
 
   imports: [
     BrowserModule, 
@@ -67,6 +89,7 @@ import { GenBooksService } from './services/genreBooks/gen-books.service';
   providers: [
     GenBooksService
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {}
