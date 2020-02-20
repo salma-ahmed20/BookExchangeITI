@@ -22,14 +22,8 @@ const routes: Routes = [
       { path: "complaint", component: ComplaintsComponent }
     ]
   }
-
-  // { path: "user/profile", component: UserprofileComponent },
-  // { path: "user/editprofile", component: UsereditprofileComponent },
-  // { path: "user/wantedbooks", component: UserwantbooksComponent },
-  // { path: "user/havedbooks", component: UserhavebooksComponent },
-  // { path: "user/searchchat", component: SearchchatComponent },
-  // { path: "user/complaint", component: ComplaintsComponent }
 ];
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

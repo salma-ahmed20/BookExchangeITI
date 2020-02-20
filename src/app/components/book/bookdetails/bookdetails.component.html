@@ -1,3 +1,20 @@
+<div class="ht__bradcaump__area bg-image--6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">Details</h2>
+                    <nav class="bradcaump-content">
+                        <a class="breadcrumb_item" routerLink="">Home</a>
+                        <span class="brd-separetor">/</span>
+                        <span class="breadcrumb_item active">Details</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="maincontent bg--white pt--80 pb--55">
     <div class="container">
         <div class="row">
@@ -6,12 +23,12 @@
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <div class="wn__fotorama__wrapper">
-                                <img src="http://demo.devitems.com/boighor-v3/images/books/1.jpg">
+                                <img src="{{book.Photo_Url}}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-12">
                             <div class="product__info__main">
-                                <h1>Chaz Kangeroo Hoodie</h1>
+                                <h1>{{book.Title}}</h1>
                                 <div class="product-reviews-summary d-flex">
                                     <ul class="rating-summary d-flex">
                                         <li><i class="zmdi zmdi-star-outline"></i></li>
@@ -25,11 +42,7 @@
                                     <span>$52.00</span>
                                 </div> -->
                                 <div class="product__overview">
-                                    <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises
-                                        superior warmth with every wear. Thick material blocks out the wind as ribbed
-                                        cuffs and bottom band seal in body heat.</p>
-                                    <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises
-                                        superior warmth with every wear. </p>
+                                    <p>{{book.Description}}</p>
                                 </div>
 
                                 <div class="product_meta">
@@ -42,7 +55,7 @@
 
                                     <div class="pro_details_nav nav justify-content-start" role="tablist">
                                         <p>User have Book</p>
-                                        <app-user-list></app-user-list>
+                                        <!-- <app-user-list></app-user-list> -->
 
                                     </div>
                                 </div>

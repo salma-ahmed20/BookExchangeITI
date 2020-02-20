@@ -1,6 +1,7 @@
 import { LoginService } from "./../../services/user/login/login.service";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { ModalService } from "../shared/_modal";
 
 @Component({
   selector: "app-header",
@@ -10,7 +11,11 @@ import { Router } from "@angular/router";
 export class HeaderComponent implements OnInit {
   showRequests: boolean;
   showLoginAndSignUp: boolean = true;
-  constructor(private router: Router, private login: LoginService) {}
+  constructor(
+    private router: Router,
+    private login: LoginService,
+    private modalService: ModalService
+  ) {}
 
   ngOnInit() {
     this.searchToggler();
@@ -70,9 +75,10 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
-  test() {
+  test(id: string) {
     // [routerLink]='[{ outlets: { modalShared: ["book","add"] } }]'
-    this.router.navigate([{ outlets: { modalShared: ["book", "add"] } }]);
+    // this.router.navigate([{ outlets: { modalShared: ["book", "add"] } }]);
     // (click)="test()"
+    this.modalService.open(id);
   }
 }

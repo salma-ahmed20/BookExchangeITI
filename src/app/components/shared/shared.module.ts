@@ -1,3 +1,4 @@
+import { RouterModule, Router } from "@angular/router";
 import { UserItemComponent } from "./user-item/user-item.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -7,6 +8,7 @@ import { BookItemComponent } from "./book-item/book-item.component";
 import { UserListComponent } from "../home/user-list/user-list.component";
 import { BookOverviewComponent } from "./book-overview/book-overview.component";
 import { BooklistComponent } from "./booklist/booklist.component";
+import { ModalModule } from "./_modal";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { BooklistComponent } from "./booklist/booklist.component";
     BookOverviewComponent,
     BooklistComponent
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, ModalModule, RouterModule],
   exports: [
     BookListComponent,
     ChangeBackgroundDirective,
@@ -26,7 +28,8 @@ import { BooklistComponent } from "./booklist/booklist.component";
     UserListComponent,
     UserItemComponent,
     BooklistComponent,
-    CommonModule
+    CommonModule,
+    ModalModule
   ]
 })
 export class SharedModule {}

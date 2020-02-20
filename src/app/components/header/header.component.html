@@ -108,20 +108,20 @@
                     <li class="shop_search">
                         <a class="search__active" href="#"></a>
                     </li>
-                    <li class="wishlist">
-                        <!-- <a data-toggle="modal" href="#sharedmodal" [routerLink]='[{ outlets:  { modalShared  : ["book/add"] } }]'></a> -->
-                        <!-- <a data-toggle="modal" [routerLink]='[{outlets: { modalShared: ["book","add"]}}]' href="#sharedmodal">add</a> -->
-                        <a data-toggle="modal" href="#sharedmodal" (click)="test()">add</a>
-
+                    <li *ngIf="!showLoginAndSignUp" class="wishlist">
+                        <a (click)="test('addBook')">add</a>
+                        <jw-modal id="addBook">
+                            <app-add-book></app-add-book>
+                        </jw-modal>
                     </li>
-                    <li class="shopcart">
+                    <li *ngIf="!showLoginAndSignUp" class="shopcart">
                         <a class="cartbox_active" (click)="onShowMinRequestsClick()"><span class="product_qun">3</span></a>
                         <!-- Start Shopping Cart -->
                         <app-requests [showRequests]="showRequests" (closeRequests)="toggleRequestStates($event)"></app-requests>
                         <!-- End Shopping Cart -->
                     </li>
                     <li *ngIf="showLoginAndSignUp">
-                        <span style="margin-right: 10px;"><a routerLink="login">Sign In</a></span>
+                        <span style="margin-right: 10px; margin-left: 10px;"><a routerLink="login">Sign In</a></span>
                     </li>
                     <li *ngIf="showLoginAndSignUp">
                         |
@@ -129,9 +129,9 @@
                     <li *ngIf="showLoginAndSignUp">
                         <span style="margin-left: 10px;"><a routerLink="signup">    Create An Account</a></span>
                     </li>
-                    <!-- <li class="setting__bar__icon">
-                        <a class="setting__active" href="#"></a>
-                        <div class="searchbar__content setting__block">
+                    <li *ngIf="!showLoginAndSignUp" class="setting__bar__icon">
+                        <a class="setting__active" [routerLink]="['user']"></a>
+                        <!-- <div class="searchbar__content setting__block">
                             <div class="content-inner">
                                 <div class="switcher-currency">
                                     <strong class="label switcher-label">
@@ -196,8 +196,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li> -->
+                        </div> -->
+                    </li>
                 </ul>
             </div>
         </div>

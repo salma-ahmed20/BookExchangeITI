@@ -1,3 +1,4 @@
+import { SharedModule } from "./components/shared/shared.module";
 import { TokenInterceptorsService } from "./services/user/login/TokenInterceptors.service";
 import { UserModule } from "./components/user/user.module";
 import { SignUpModule } from "./components/sign-up-page/signup.module";
@@ -46,8 +47,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
     BookModule,
     LoginModule,
     SignUpModule,
-
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [
     {

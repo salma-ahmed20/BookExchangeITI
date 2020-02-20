@@ -17,15 +17,6 @@ export class UserService {
   ) {}
 
   getUserHaveBook(userId?): Observable<Book[]> {
-    let id;
-    if (!userId && this.service.isLoggedIn()) {
-      let jwtHelper = new JwtHelperService();
-      let token = localStorage.getItem("token");
-      id = jwtHelper.decodeToken(token)["LogUserId"];
-    } else {
-      this.router.navigate(["notFount"]);
-      return;
-    }
     return this.http.get<Book[]>(
       "http://localhost:52558/api/user/having/" + id
     );

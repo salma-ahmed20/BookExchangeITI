@@ -33,4 +33,7 @@ export class BooksService {
         }
       );
   }
+  getBookById(id: number): Observable<Book> {
+    return this.http.get<Book>(this.baseUrl + "/Books/" + id);
+  }
 }
