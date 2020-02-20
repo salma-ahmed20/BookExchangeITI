@@ -8,6 +8,8 @@ import { Router } from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   showRequests: boolean;
+  showChats: boolean;
+
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -29,8 +31,14 @@ export class HeaderComponent implements OnInit {
   onShowMinRequestsClick() {
     this.showRequests = true;
   }
+  onShowMinChatsClick() {
+    this.showChats = true;
+  }
   toggleRequestStates(event) {
     this.showRequests = event;
+  }
+  toggleChatStates(event) {
+    this.showChats = event;
   }
   searchToggler() {
     var trigger = $(".search__active"),

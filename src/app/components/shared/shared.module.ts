@@ -16,7 +16,6 @@ import { ChatItemComponent } from './chat-item/chat-item.component';
     UserListComponent,
     UserItemComponent,
     BookOverviewComponent,
-    ChatItemComponent
   ],
   imports: [CommonModule],
   exports: [

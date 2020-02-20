@@ -2636,7 +2636,7 @@ Header Styles
 }
 
 .header__area .header__sidebar__right>li.wishlist>a {
-    background: rgba(0, 0, 0, 0) url("http://demo.devitems.com/boighor-v3/images/icons/button-wishlist.png") no-repeat scroll 0 center;
+    /* background: rgba(0, 0, 0, 0) url("http://demo.devitems.com/boighor-v3/images/icons/button-wishlist.png") no-repeat scroll 0 center; */
     height: 100%;
     line-height: 35px;
     width: 24px;

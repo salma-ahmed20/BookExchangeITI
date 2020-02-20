@@ -1,6 +1,6 @@
-import { RequestItemMin } from "./../../../models/request_item.model";
 import { RequestsMinService } from "./../../../services/requests-min.service";
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { RequestItemMin } from 'src/app/models/request_item.model';
 
 @Component({
   selector: "app-requests",

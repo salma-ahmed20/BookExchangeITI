@@ -108,11 +108,10 @@
                     <li class="shop_search">
                         <a class="search__active" href="#"></a>
                     </li>
-                    <li class="wishlist">
+                    <li class="fa far fa-comments wishlist">
 
-                        <a class="cartbox_active" (click)="onShowMinRequestsClick()"><span class="product_qun">3</span></a>
                         <!-- Start Shopping Cart -->
-                        <app-chats [showRequests]="showRequests" (closeRequests)="toggleRequestStates($event)"></app-chats>
+                        <app-chats [showRequests]="showChats" (closeRequests)="toggleChatStates($event)"></app-chats>
                     </li>
                     <li class="shopcart">
                         <a class="cartbox_active" (click)="onShowMinRequestsClick()"><span class="product_qun">3</span></a>

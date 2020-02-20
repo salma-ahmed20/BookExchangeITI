@@ -1,3 +1,4 @@
+
 import { UserModule } from './components/user/user.module';
 import { UserComponent } from './components/user/user.component';
 import { UserwantbooksComponent } from './components/user/userwantbooks/userwantbooks.component';
@@ -30,6 +31,7 @@ import { AutocompleteLibModule } from "angular-ng-autocomplete";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { ChatsComponent } from './chats/chats.component';
+import { ChatItemComponent } from './components/shared/chat-item/chat-item.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { ChatsComponent } from './chats/chats.component';
     RequestItemComponent,
     SearchPopupComponent,
     ModalComponent,
-    ChatsComponent
+    ChatsComponent,
+    ChatItemComponent
       ],
 
   imports: [
