@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 
 
+
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/header/header.component";
@@ -24,6 +25,8 @@ import { BookItemComponent } from './components/shared/book-item/book-item.compo
 import { BookListComponent } from './components/home/book-list/book-list.component';
 import { UserListComponent } from './components/home/user-list/user-list.component';
 import { UserItemComponent } from './components/shared/user-item/user-item.component';
+import { GenreBooksComponent } from './components/genre-books/genre-books.component';
+import { GenBooksService } from './services/genreBooks/gen-books.service';
 
 
 
@@ -45,7 +48,8 @@ import { UserItemComponent } from './components/shared/user-item/user-item.compo
     UserListComponent, 
     UserItemComponent,
     LoginPageComponent, 
-    SignUpPageComponent
+    SignUpPageComponent, GenreBooksComponent,
+    
   ],
 
   imports: [
@@ -54,10 +58,15 @@ import { UserItemComponent } from './components/shared/user-item/user-item.compo
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([])
+  
+    
+    
+   
    
   ],
-  providers: [],
+  providers: [
+    GenBooksService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

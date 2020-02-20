@@ -1,1 +1,11 @@
-<p>geners works!</p>
+
+
+
+
+
+<div class="list-group">
+    
+    <a *ngFor="let genre of genres" class="list-group-item list-group-item-action" 
+    routerLink="/genre/{{genre.id}}" routerLinkActive="active">{{genre.name}}</a>   
+    
+</div>

@@ -1,15 +1,16 @@
 
 <div class="container register-form">
   <div class="form">
-      <div class="note"></div>
-         
       
-
+         
+<form #form NgModule (ngSubmit)="submit(form.value)">
       <div class="form-content">
           <div class="row">
               <div class="col-md-6">
                   <div class="form-group">
-                      <input type="text" class="form-control"
+                      <input type="text" 
+                      (keyup.Enter)="CreateForm()" #Fname
+                      class="form-control"
                       required
                       ngModel name="Firstname"  
                        #firstname='ngModel'
@@ -88,6 +89,7 @@
         </div>
           <button type="button" class="btnSubmit">Sign Up</button>
       </div>
+    </form>
   </div>
 </div>
 
