@@ -5,7 +5,8 @@ import { BookListComponent } from "../home/book-list/book-list.component";
 import { ChangeBackgroundDirective } from "src/app/directives/change-background.directive";
 import { BookItemComponent } from "./book-item/book-item.component";
 import { UserListComponent } from "../home/user-list/user-list.component";
-import { BookOverviewComponent } from './book-overview/book-overview.component';
+import { BookOverviewComponent } from "./book-overview/book-overview.component";
+import { BooklistComponent } from "./booklist/booklist.component";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BookOverviewComponent } from './book-overview/book-overview.component';
     BookItemComponent,
     UserListComponent,
     UserItemComponent,
-    BookOverviewComponent
+    BookOverviewComponent,
+    BooklistComponent
   ],
   imports: [CommonModule],
   exports: [
@@ -23,6 +25,7 @@ import { BookOverviewComponent } from './book-overview/book-overview.component';
     BookItemComponent,
     UserListComponent,
     UserItemComponent,
+    BooklistComponent,
     CommonModule
   ]
 })
