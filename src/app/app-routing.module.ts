@@ -7,14 +7,19 @@ import { AddBookComponent } from "./components/book/add-book/add-book.component"
 
 import { BookdetailsComponent } from "./components/book/bookdetails/bookdetails.component";
 import { BooklistComponent } from './components/shared/booklist/booklist.component';
+import { SearchComponent } from './components/search/search.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "book/add", component: AddBookComponent, outlet: "modalShared" },
   { path: "book/details/:id", component: BookdetailsComponent },
 
-  { path: "**", pathMatch: "full", component: NotFoundComponent },
   { path: "books/:id", component: BooklistComponent },
+  { path: "search/:title", component: SearchComponent },
+  { path: "contact", component: ContactComponent },
+  { path: "**", pathMatch: "full", component: NotFoundComponent }
+  
 ];
 
 @NgModule({
