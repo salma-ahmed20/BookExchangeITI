@@ -8,7 +8,7 @@ import { GenBooksService } from 'src/app/services/genreBooks/gen-books.service';
   styleUrls: ['./genre-books.component.css']
 })
 export class GenreBooksComponent implements OnInit {
-id;
+id:any;
 books:any;
 
 
@@ -18,6 +18,7 @@ books:any;
   ngOnInit() {
   this.service.getBooks()
   .subscribe(response=>{
+    
 
    
   });
