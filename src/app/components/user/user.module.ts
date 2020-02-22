@@ -9,6 +9,7 @@ import { UserComponent } from './user.component';
 import { ChatComponent } from './chat/chat.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { SearchchatComponent } from './searchchat/searchchat.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 declarations:[
@@ -24,7 +25,8 @@ declarations:[
 ],
 imports:[
     SharedModule,
-    UserRoutingModule
+    UserRoutingModule,
+    FormsModule
 ],
 exports:[
     UsereditprofileComponent,
