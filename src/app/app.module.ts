@@ -46,7 +46,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
     BookModule,
     LoginModule,
     SignUpModule,
-
     AppRoutingModule
   ],
   providers: [
