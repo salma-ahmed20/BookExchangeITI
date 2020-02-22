@@ -25,6 +25,8 @@ import { AutocompleteLibModule } from "angular-ng-autocomplete";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { GenersComponent } from "./components/geners/geners.component";
+import { SearchComponent } from './components/search/search.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { GenersComponent } from "./components/geners/geners.component";
     GenersComponent,
     GenreBooksComponent,
     SearchPopupComponent,
-    ModalComponent
+    ModalComponent,
+    SearchComponent,
+    ContactComponent
   ],
 
   imports: [
