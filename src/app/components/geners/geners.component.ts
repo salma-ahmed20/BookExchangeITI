@@ -12,22 +12,10 @@ import { Router } from "@angular/router";
 export class GenersComponent implements OnInit {
   genres: Genre[];
 
-  // selectedGenreId=0;
-  /**
-   *
-   */
-  constructor(private router: Router, private service: GenreService) {
-    // router.parseUrl(router.url).queryParams.
-  }
+  constructor(private router: Router, private service: GenreService) {}
   ngOnInit() {
     this.service.getAllGeners().subscribe(res => {
       this.genres = res;
     });
   }
-
-  //   goToGenre(id){
-  //     console.log(id);
-
-  // this.selectedGenreId = id;
-  //   }
 }

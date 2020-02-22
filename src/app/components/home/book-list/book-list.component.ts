@@ -1,3 +1,4 @@
+import { UserHaveBookItem } from "../../../models/user-want.book.model";
 import { Book } from "src/app/models/book_item.model";
 import { BooksService } from "./../../../services/book/books.service";
 import {
@@ -26,13 +27,14 @@ export class BookListComponent
     });
   }
 
-  books: Book[];
+  books: UserHaveBookItem[];
 
   constructor(private service: BooksService) {}
 
   ngOnInit() {
-    this.service.getAllBooks().subscribe(res => {
-      this.books = res;
+    this.service.getWantedBookByUserId(-1, 1, 6).subscribe(res => {
+      this.books = res.books;
+      console.log(this.books);
     });
   }
   owl() {

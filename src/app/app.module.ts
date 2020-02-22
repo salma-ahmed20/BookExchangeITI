@@ -1,3 +1,4 @@
+import { RequestsService } from "./services/requests/requests.service";
 import { GenreBooksComponent } from "./components/genre-books/genre-books.component";
 import { SharedModule } from "./components/shared/shared.module";
 import { TokenInterceptorsService } from "./services/user/login/TokenInterceptors.service";
@@ -41,7 +42,7 @@ import { GenersComponent } from "./components/geners/geners.component";
 
   imports: [
     BrowserModule,
-    AutocompleteLibModule,
+
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

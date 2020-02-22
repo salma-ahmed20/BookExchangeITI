@@ -1,30 +1,33 @@
 import { LoginService } from "./../../services/user/login/login.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ModalService } from "../shared/_modal";
+import { RequestsService } from "src/app/services/requests/requests.service";
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
+  ngAfterViewInit(): void {
+    this.settingToggler();
+    this.searchToggler();
+    this.mobileMenu();
+    this.stickyHeader();
+  }
   showRequests: boolean;
   showLoginAndSignUp: boolean = true;
   constructor(
     private router: Router,
     private login: LoginService,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private requestsService: RequestsService
   ) {}
 
   ngOnInit() {
-    this.searchToggler();
-    this.mobileMenu();
-    this.stickyHeader();
     this.login.isLoggedIn();
     this.login.loggedIn.subscribe(res => {
-      console.log(res);
-
       this.showLoginAndSignUp = !res;
     });
     this.login.isLoggedIn();
@@ -45,6 +48,18 @@ export class HeaderComponent implements OnInit {
   }
   toggleRequestStates(event) {
     this.showRequests = event;
+  }
+  settingToggler() {
+    var settingTrigger = $(".setting__active"),
+      settingContainer = $(".setting__block");
+    settingTrigger.on("click", function(e) {
+      e.preventDefault();
+      settingContainer.toggleClass("is-visible");
+    });
+    settingTrigger.on("click", function(e) {
+      e.preventDefault();
+      settingContainer.toggleClass("");
+    });
   }
   searchToggler() {
     var trigger = $(".search__active"),

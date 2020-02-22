@@ -1,3 +1,4 @@
+import { AddRequestComponent } from "./add-request/add-request.component";
 import { RouterModule, Router } from "@angular/router";
 import { UserItemComponent } from "./user-item/user-item.component";
 import { NgModule } from "@angular/core";
@@ -9,6 +10,7 @@ import { UserListComponent } from "../home/user-list/user-list.component";
 import { BookOverviewComponent } from "./book-overview/book-overview.component";
 import { BooklistComponent } from "./booklist/booklist.component";
 import { ModalModule } from "./_modal";
+import { AutocompleteLibModule } from "angular-ng-autocomplete";
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { ModalModule } from "./_modal";
     UserListComponent,
     UserItemComponent,
     BookOverviewComponent,
-    BooklistComponent
+    BooklistComponent,
+    AddRequestComponent
   ],
-  imports: [CommonModule, ModalModule, RouterModule],
+  imports: [CommonModule, ModalModule, RouterModule, AutocompleteLibModule],
   exports: [
     BookListComponent,
     ChangeBackgroundDirective,
@@ -30,7 +33,9 @@ import { ModalModule } from "./_modal";
     BooklistComponent,
     BookOverviewComponent,
     CommonModule,
-    ModalModule
+    ModalModule,
+    AddRequestComponent,
+    AutocompleteLibModule
   ]
 })
 export class SharedModule {}

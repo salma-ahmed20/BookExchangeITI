@@ -1,4 +1,3 @@
-import { RequestsMinService } from "./../../../services/requests-min.service";
 import { RequestItemMin } from "./../../../models/request_item.model";
 import { Component, OnInit, Input } from "@angular/core";
 

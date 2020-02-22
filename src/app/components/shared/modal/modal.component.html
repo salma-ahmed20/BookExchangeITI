@@ -1,10 +1,16 @@
-<div id="quickview-wrapper">
-    <!-- Modal -->
-    <div class="modal fade" id="sharedmodal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal__container" role="document">
-            <div class="modal-content">
-                <ng-content></ng-content>
-            </div>
+<div class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" (click)="closeModal()">&times;</span>
+            <h2>
+                <ng-content select="[modal-header]"></ng-content>
+            </h2>
+        </div>
+        <div class="modal-body">
+            <ng-content select="[modal-body]"></ng-content>
+        </div>
+        <div class="modal-footer">
+            <ng-content select="[modal-footer]"></ng-content>
         </div>
     </div>
 </div>

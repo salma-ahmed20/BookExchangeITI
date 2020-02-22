@@ -1,10 +1,10 @@
 <div class="item01 d-flex mt--20">
     <div class="thumb">
-        <a href="product-details.html"><img src="{{requestItem.bookImage}}" alt="product images"></a>
+        <a href="product-details.html"><img src="{{requestItem.RequestedBook.Photo_Url}}" alt="product images"></a>
     </div>
     <div class="content">
-        <h6><a href="product-details.html">{{requestItem.bookName}}</a></h6>
-        <a href="#" class="prize">{{requestItem.senderUserName}}</a>
+        <h6><a href="product-details.html">{{requestItem.RequestedBook.Title}}</a></h6>
+        <a href="#" class="prize">{{requestItem.SenderUser.FirstName+" "+requestItem.SenderUser.LastName}}</a>
         <div class="product_prize d-flex justify-content-between">
             <span class="qun"></span>
             <ul class="d-flex justify-content-end">

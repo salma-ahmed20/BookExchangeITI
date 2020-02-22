@@ -12,4 +12,12 @@ export class ServiceNameService {
       "http://localhost:52558/api/search?name=" + title
     );
   }
+  searchByNameAtUser(userId, bookTitle: string): Observable<Book[]> {
+    return this.httpClient.get<Book[]>(
+      `http://localhost:52558/api/user/search/have`,
+      {
+        params: { bookTitle, userId }
+      }
+    );
+  }
 }
