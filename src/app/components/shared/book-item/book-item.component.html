@@ -16,7 +16,7 @@
                 <ul class="add_to_links">
                     <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a>
                     </li>
-                    <li>
+                    <li *ngIf="loginService.isLoggedInNew()">
                         <a title="I Have This" class="wishlist" href="wishlist.html">
                             <i class="bi bi-shopping-cart-full"></i>
                         </a>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <jw-modal id="{{bindBook.Book_Id}}Modal">
-            <app-book-overview [book]="book"></app-book-overview>
+            <app-book-overview [book]="bindBook"></app-book-overview>
         </jw-modal>
         <jw-modal *ngIf="loginService.isLoggedInNew()" id="{{bindBook.Book_Id}}AddBookModal">
             <app-add-request [requestedBook]="book"></app-add-request>

@@ -33,6 +33,31 @@ export class RequestsService {
       headers: { "content-type": "application/json" }
     });
   }
+
+  acceptRequest(requestId): Observable<RequestItemMin> {
+    return this.http.put<RequestItemMin>(
+      "http://localhost:52558/api/Request/Accept?id=" + requestId,
+      { id: requestId }
+    );
+  }
+  refuseRequest(requestId): Observable<RequestItemMin> {
+    return this.http.put<RequestItemMin>(
+      "http://localhost:52558/api/Request/Refuse?id=" + requestId,
+      { id: requestId }
+    );
+  }
+  sendSwapRequest(requestId): Observable<RequestItemMin> {
+    return this.http.put<RequestItemMin>(
+      "http://localhost:52558/api/Request/RequestSwap?id=" + requestId,
+      { id: requestId }
+    );
+  }
+  acceptSwapRequest(requestId): Observable<RequestItemMin> {
+    return this.http.put<RequestItemMin>(
+      "http://localhost:52558/api/Request/AcceptSwap?id=" + requestId,
+      { id: requestId }
+    );
+  }
 }
 export class Request {
   BookId; // sended

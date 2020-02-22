@@ -1,3 +1,4 @@
+import { RequestItemComponent } from "./request-item/request-item.component";
 import { AddRequestComponent } from "./add-request/add-request.component";
 import { RouterModule, Router } from "@angular/router";
 import { UserItemComponent } from "./user-item/user-item.component";
@@ -21,7 +22,8 @@ import { AutocompleteLibModule } from "angular-ng-autocomplete";
     UserItemComponent,
     BookOverviewComponent,
     BooklistComponent,
-    AddRequestComponent
+    AddRequestComponent,
+    RequestItemComponent
   ],
   imports: [CommonModule, ModalModule, RouterModule, AutocompleteLibModule],
   exports: [
@@ -35,7 +37,8 @@ import { AutocompleteLibModule } from "angular-ng-autocomplete";
     CommonModule,
     ModalModule,
     AddRequestComponent,
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    RequestItemComponent
   ]
 })
 export class SharedModule {}

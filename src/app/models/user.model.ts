@@ -1,11 +1,10 @@
 export class User {
-  UserId:number;
+  UserId: number;
   FirstName: string;
   LastName: string;
   Address: string;
-  City:string;
-  PhotoUrl : string;
-  Email : string;
+  City: string;
+  PhotoUrl: string;
+  Email: string;
   Rate: number;
-  UserId;
 }

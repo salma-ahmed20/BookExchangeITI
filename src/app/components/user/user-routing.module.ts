@@ -1,3 +1,4 @@
+import { RequestsComponent } from "./../header/requests/requests.component";
 import { UserComponent } from "./user.component";
 import { RouterModule } from "@angular/router";
 import { Routes } from "@angular/router";
@@ -8,6 +9,7 @@ import { UserwantbooksComponent } from "./userwantbooks/userwantbooks.component"
 import { UserhavebooksComponent } from "./userhavebooks/userhavebooks.component";
 import { SearchchatComponent } from "./searchchat/searchchat.component";
 import { ComplaintsComponent } from "./complaints/complaints.component";
+import { RequestsPageComponent } from "./requests-page/requests-page.component";
 
 const routes: Routes = [
   {
@@ -19,7 +21,8 @@ const routes: Routes = [
       { path: "wantedbooks", component: UserwantbooksComponent },
       { path: "havedbooks", component: UserhavebooksComponent },
       { path: "searchchat", component: SearchchatComponent },
-      { path: "complaint", component: ComplaintsComponent }
+      { path: "complaint", component: ComplaintsComponent },
+      { path: "requests", component: RequestsPageComponent }
     ]
   }
 ];

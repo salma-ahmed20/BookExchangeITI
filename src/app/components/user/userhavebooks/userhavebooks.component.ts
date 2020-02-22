@@ -23,10 +23,8 @@ export class UserhavebooksComponent implements OnInit {
   ngOnInit() {
     this.userId = this.route.snapshot.parent.params["id"];
 
-    this.bookService
-      .getWantedBookByUserId(1, 20, this.userId)
-      .subscribe(res => {
-        this.books = res.books;
-      });
+    this.bookService.getHaveBookByUserId(1, 20, this.userId).subscribe(res => {
+      this.books = res.books;
+    });
   }
 }

@@ -37,13 +37,9 @@ export class BooksService {
   getBookById(id: number): Observable<Book> {
     return this.http.get<Book>(this.baseUrl + "/Books/" + id);
   }
-  getWantedBookByUserId(
-    pageNumber,
-    pageSize,
-    userId?
-  ): Observable<UserHaveBook> {
+  getHaveBookByUserId(pageNumber, pageSize, userId?): Observable<UserHaveBook> {
     // debugger;
-    return this.http.get<UserHaveBook>("http://localhost:52558/api/home/want", {
+    return this.http.get<UserHaveBook>("http://localhost:52558/api/home/have", {
       params: { pageNumber, pageSize, userId }
     });
   }

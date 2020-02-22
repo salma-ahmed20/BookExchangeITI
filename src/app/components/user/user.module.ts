@@ -10,6 +10,7 @@ import { ChatComponent } from './chat/chat.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { SearchchatComponent } from './searchchat/searchchat.component';
 import { FormsModule } from '@angular/forms';
+import { RequestsPageComponent } from './requests-page/requests-page.component';
 
 @NgModule({
 declarations:[
@@ -20,7 +21,8 @@ declarations:[
     UserComponent,
     ChatComponent,
     ComplaintsComponent,
-    SearchchatComponent
+    SearchchatComponent,
+    RequestsPageComponent
 
 ],
 imports:[

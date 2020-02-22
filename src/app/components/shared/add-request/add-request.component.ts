@@ -1,3 +1,4 @@
+import { User } from "src/app/models/user.model";
 import { RequestsService } from "src/app/services/requests/requests.service";
 import { UserHaveBookItem } from "../../../models/user-want.book.model";
 import { LoginService } from "./../../../services/user/login/login.service";
@@ -16,6 +17,8 @@ export class AddRequestComponent implements OnInit {
   @Input() requestedBook: UserHaveBookItem;
   userHaveBooks: Book[];
   currentuUserId;
+  bindBook: Book;
+  bindUser: User;
   selectedBook: Book;
   error: string;
 
@@ -27,12 +30,18 @@ export class AddRequestComponent implements OnInit {
     private requestsService: RequestsService
   ) {
     this.selectedBook = new Book();
+    this.bindBook = new Book();
+    this.bindUser = new User();
   }
 
   ngOnInit() {
     if (this.loginService.isLoggedInNew()) {
       this.currentuUserId = this.loginService.getCurrentLogginId();
     }
+
+    this.bindBook = this.requestedBook.Book;
+    this.bindUser = this.requestedBook.User;
+    console.log(this.requestedBook);
   }
   closeModale(id) {
     this.modalService.close(this.requestedBook.Book.Book_Id + "AddBookModal");

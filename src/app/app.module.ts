@@ -35,7 +35,6 @@ import { ContactComponent } from "./components/contact/contact.component";
     FooterComponent,
     NotFoundComponent,
     RequestsComponent,
-    RequestItemComponent,
     GenersComponent,
     GenreBooksComponent,
     SearchPopupComponent,
