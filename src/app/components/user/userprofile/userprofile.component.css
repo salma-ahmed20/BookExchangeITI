@@ -19,12 +19,11 @@
 }
 /*end edit profile*/
 .container{
-    padding: 90px 20px 20px 130px;
+   
 }
 
 .dataform{
-   
-    padding: 90px 0 0 0;
+   width: 815px;
 }
 .dataform .btn{
     margin: 0px 5px 0px 5px;

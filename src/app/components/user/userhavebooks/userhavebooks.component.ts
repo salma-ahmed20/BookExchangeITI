@@ -1,24 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { UserService } from "./../../../services/user/user/user.service";
+import { Component, OnInit } from "@angular/core";
+import { Book } from "src/app/models/book_item.model";
 
 @Component({
-  selector: 'app-userhavebooks',
-  templateUrl: './userhavebooks.component.html',
-  styleUrls: ['./userhavebooks.component.css']
+  selector: "app-userhavebooks",
+  templateUrl: "./userhavebooks.component.html",
+  styleUrls: ["./userhavebooks.component.css"]
 })
 export class UserhavebooksComponent implements OnInit {
+  books: Book[];
 
-  books=
-  [
-    {id:1,name:"img1"},
-    {id:4,name:"img4"},
-    {id:3,name:"img3"},
-    {id:4,name:"img1"}
-
-  ]
- 
-  constructor() { }
+  constructor(private user: UserService) {}
 
   ngOnInit() {
+    this.user.getUserHaveBook().subscribe(res => {
+      this.books = res;
+    });
   }
-
 }

@@ -1,13 +1,6 @@
-
-import { UserModule } from './components/user/user.module';
-import { UserComponent } from './components/user/user.component';
-import { UserwantbooksComponent } from './components/user/userwantbooks/userwantbooks.component';
-import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
-import { UserhavebooksComponent } from './components/user/userhavebooks/userhavebooks.component';
-import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
-import { SearchchatComponent } from './components/user/searchchat/searchchat.component';
-import { ComplaintsComponent } from './components/user/complaints/complaints.component';
-import { ChatComponent } from './components/user/chat/chat.component';
+import { SharedModule } from './components/shared/shared.module';
+import { TokenInterceptorsService } from "./services/user/login/TokenInterceptors.service";
+import { UserModule } from "./components/user/user.module";
 import { SignUpModule } from "./components/sign-up-page/signup.module";
 import { LoginModule } from "./components/login-page/login.module";
 import { BookModule } from "./components/book/book.module";
@@ -29,9 +22,7 @@ import { ModalComponent } from "./components/shared/modal/modal.component";
 
 import { AutocompleteLibModule } from "angular-ng-autocomplete";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
-import { ChatsComponent } from './chats/chats.component';
-import { ChatItemComponent } from './components/shared/chat-item/chat-item.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -42,10 +33,8 @@ import { ChatItemComponent } from './components/shared/chat-item/chat-item.compo
     RequestsComponent,
     RequestItemComponent,
     SearchPopupComponent,
-    ModalComponent,
-    ChatsComponent,
-    ChatItemComponent
-      ],
+    ModalComponent
+  ],
 
   imports: [
     BrowserModule,
@@ -58,9 +47,16 @@ import { ChatItemComponent } from './components/shared/chat-item/chat-item.compo
     BookModule,
     LoginModule,
     SignUpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorsService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

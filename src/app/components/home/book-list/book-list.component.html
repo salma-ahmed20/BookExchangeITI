@@ -9,7 +9,10 @@
             </div>
         </div>
         <div class="furniture--4 border--round arrows_style owl-carousel owl-theme row mt--50">
-            <app-book-item *ngFor="let item of books" [book]="item"></app-book-item>
+            <div #allTheseThings *ngFor="let item of books" class="col-slg-3 col-md-4 col-sm-6 col-12">
+                <app-book-item [book]="item"></app-book-item>
+
+            </div>
 
 
         </div>

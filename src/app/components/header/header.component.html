@@ -38,7 +38,7 @@
                                 </ul>
                             </div>
                         </li> -->
-                        <li class="drop"><a href="shop-grid.html">Books</a>
+                        <li class="drop"><a routerLink="genre">Books</a>
                             <div class="megamenu dropdown">
                                 <ul class="item item01">
                                     <li class="title">Categories</li>
@@ -99,7 +99,7 @@
                                 </ul>
                             </div>
                         </li> -->
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a routerLink="contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -108,10 +108,11 @@
                     <li class="shop_search">
                         <a class="search__active" href="#"></a>
                     </li>
-                    <li class="fa far fa-comments wishlist">
+                    <li class="wishlist">
+                        <!-- <a data-toggle="modal" href="#sharedmodal" [routerLink]='[{ outlets:  { modalShared  : ["book/add"] } }]'></a> -->
+                        <!-- <a data-toggle="modal" [routerLink]='[{outlets: { modalShared: ["book","add"]}}]' href="#sharedmodal">add</a> -->
+                        <a data-toggle="modal" href="#sharedmodal" (click)="test()">add</a>
 
-                        <!-- Start Shopping Cart -->
-                        <app-chats [showRequests]="showChats" (closeRequests)="toggleChatStates($event)"></app-chats>
                     </li>
                     <li class="shopcart">
                         <a class="cartbox_active" (click)="onShowMinRequestsClick()"><span class="product_qun">3</span></a>
@@ -119,14 +120,14 @@
                         <app-requests [showRequests]="showRequests" (closeRequests)="toggleRequestStates($event)"></app-requests>
                         <!-- End Shopping Cart -->
                     </li>
-                    <li>
-                        <span><a routerLink="login">Sign In   </a></span>
+                    <li *ngIf="showLoginAndSignUp">
+                        <span style="margin-right: 10px;"><a routerLink="login">Sign In</a></span>
                     </li>
-                    <li>
+                    <li *ngIf="showLoginAndSignUp">
                         |
                     </li>
-                    <li>
-                        <span><a routerLink="signup">    Create An Account</a></span>
+                    <li *ngIf="showLoginAndSignUp">
+                        <span style="margin-left: 10px;"><a routerLink="signup">    Create An Account</a></span>
                     </li>
                     <!-- <li class="setting__bar__icon">
                         <a class="setting__active" href="#"></a>
