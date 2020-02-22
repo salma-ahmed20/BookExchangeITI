@@ -1,3 +1,5 @@
+import { UserHaveBook } from "./../../../models/user-want.book.model";
+import { UserHaveBookItem } from "./../../../models/user-want.book.model";
 import { Observable } from "rxjs";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { Router } from "@angular/router";
@@ -16,17 +18,19 @@ export class UserService {
     private router: Router
   ) {}
 
-  getUserHaveBook(userId?): Observable<Book[]> {
-    return this.http.get<Book[]>(
-      "http://localhost:52558/api/user/having/" + userId
+  getUserHaveBook(pageNumber, pageSize, userId?): Observable<UserHaveBook> {
+    if (!userId) {
+      userId = -1;
+    }
+    return this.http.get<UserHaveBook>(
+      "http://localhost:52558/api/home/want/" + userId,
+      {
+        params: { userId, pageNumber, pageSize }
+      }
     );
   }
 
-  getUserWantBook(userId?):Observable<Book[]>{
-    return this.http.get<Book[]> (
-
-      "" 
-    );
-
+  getUserWantBook(userId?): Observable<Book[]> {
+    return this.http.get<Book[]>("");
   }
 }

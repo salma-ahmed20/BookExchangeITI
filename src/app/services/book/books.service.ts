@@ -38,12 +38,13 @@ export class BooksService {
     return this.http.get<Book>(this.baseUrl + "/Books/" + id);
   }
   getWantedBookByUserId(
-    userId,
     pageNumber,
-    pageSize
+    pageSize,
+    userId?
   ): Observable<UserHaveBook> {
+    // debugger;
     return this.http.get<UserHaveBook>("http://localhost:52558/api/home/want", {
-      params: { userId, pageNumber, pageSize }
+      params: { pageNumber, pageSize, userId }
     });
   }
 }

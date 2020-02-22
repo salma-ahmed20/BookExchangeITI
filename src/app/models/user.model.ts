@@ -3,4 +3,5 @@ export class User {
   LastName: string;
   Address: string;
   Rate: number;
+  UserId;
 }

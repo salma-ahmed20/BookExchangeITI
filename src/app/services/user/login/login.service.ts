@@ -23,9 +23,13 @@ export class LoginService {
         res => {
           var token = res;
           localStorage.setItem("token", token);
+          this.loggedIn.next(true);
+          console.log(res);
+
           return true;
         },
         err => {
+          this.loggedIn.next(false);
           return false;
         }
       );

@@ -1,3 +1,4 @@
+import { RequestsService } from "src/app/services/requests/requests.service";
 import { UserHaveBookItem } from "../../../models/user-want.book.model";
 import { LoginService } from "./../../../services/user/login/login.service";
 import { UserService } from "./../../../services/user/user/user.service";
@@ -14,24 +15,23 @@ import { ServiceNameService } from "src/app/services/search/search.service";
 export class AddRequestComponent implements OnInit {
   @Input() requestedBook: UserHaveBookItem;
   userHaveBooks: Book[];
-  currentuUerId;
+  currentuUserId;
   selectedBook: Book;
+  error: string;
 
   constructor(
     private userService: UserService,
     private loginService: LoginService,
     private modalService: ModalService,
-    private serviceNameService: ServiceNameService
+    private serviceNameService: ServiceNameService,
+    private requestsService: RequestsService
   ) {
     this.selectedBook = new Book();
   }
 
   ngOnInit() {
     if (this.loginService.isLoggedInNew()) {
-      this.currentuUerId = this.loginService.getCurrentLogginId();
-      // this.userService.getUserHaveBook(this.currentuUerId).subscribe(res => {
-      //   this.userHaveBooks = res;
-      // });
+      this.currentuUserId = this.loginService.getCurrentLogginId();
     }
   }
   closeModale(id) {
@@ -46,9 +46,9 @@ export class AddRequestComponent implements OnInit {
   }
 
   onChangeSearch(val: string) {
-    this.currentuUerId = this.loginService.getCurrentLogginId();
+    this.currentuUserId = this.loginService.getCurrentLogginId();
     this.serviceNameService
-      .searchByNameAtUser(this.currentuUerId, val)
+      .searchByNameAtUser(this.currentuUserId, val)
       .subscribe(res => {
         this.data = res;
       });
@@ -56,5 +56,27 @@ export class AddRequestComponent implements OnInit {
 
   onFocused(e) {
     // do something when input is focused
+  }
+  makeRequest() {
+    if (this.selectedBook.Book_Id) {
+      this.error = "";
+      this.requestsService
+        .newRequest(
+          this.currentuUserId,
+          this.requestedBook.User.UserId,
+          this.requestedBook.Book.Book_Id,
+          this.selectedBook.Book_Id
+        )
+        .subscribe(
+          succ => {
+            this.error = succ.toString();
+          },
+          err => {
+            this.error = err.message;
+          }
+        );
+    } else {
+      this.error = "You need to select A book";
+    }
   }
 }

@@ -19,10 +19,12 @@ export class RequestsComponent implements OnInit {
 
   ngOnInit() {
     this.login.loggedIn.subscribe(res => {
-      this.requestService.getRequests(+1, 3).subscribe(res => {
-        console.log(res);
-        this.listOfRequests = res;
-      });
+      if (res) {
+        this.requestService.getRequests(+1, 3).subscribe(res => {
+          console.log(res);
+          this.listOfRequests = res;
+        });
+      }
     });
     this.login.isLoggedIn();
   }

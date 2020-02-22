@@ -19,4 +19,24 @@ export class RequestsService {
       }
     );
   }
+  newRequest(senderUserId, recievirUserId, wantedBookId, sendedBookId) {
+    let req = new Request();
+    req.BookId = sendedBookId;
+    req.RecieverId = recievirUserId;
+    req.RequestedBookId = wantedBookId;
+    req.SenderId = senderUserId;
+
+    console.log(req);
+    debugger;
+
+    return this.http.post("http://localhost:52558/api/request/add", req, {
+      headers: { "content-type": "application/json" }
+    });
+  }
+}
+export class Request {
+  BookId; // sended
+  RequestedBookId; //requested
+  SenderId; // user
+  RecieverId;
 }

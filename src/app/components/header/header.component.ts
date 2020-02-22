@@ -1,5 +1,11 @@
 import { LoginService } from "./../../services/user/login/login.service";
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ViewChildren,
+  QueryList
+} from "@angular/core";
 import { Router } from "@angular/router";
 import { ModalService } from "../shared/_modal";
 import { RequestsService } from "src/app/services/requests/requests.service";
@@ -10,11 +16,19 @@ import { RequestsService } from "src/app/services/requests/requests.service";
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
+  @ViewChildren("accountBar") account: QueryList<any>;
+
   ngAfterViewInit(): void {
     this.settingToggler();
     this.searchToggler();
     this.mobileMenu();
     this.stickyHeader();
+
+    // console.log(this.account);
+
+    // this.account.changes.subscribe(change => {
+    //   this.stickyHeader();
+    // });
   }
   showRequests: boolean;
   showLoginAndSignUp: boolean = true;

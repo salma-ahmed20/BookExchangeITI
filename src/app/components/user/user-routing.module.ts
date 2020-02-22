@@ -11,7 +11,7 @@ import { ComplaintsComponent } from "./complaints/complaints.component";
 
 const routes: Routes = [
   {
-    path: "user",
+    path: "user/:id",
     component: UserComponent,
     children: [
       { path: "profile", component: UserprofileComponent },

@@ -32,7 +32,7 @@ export class BookListComponent
   constructor(private service: BooksService) {}
 
   ngOnInit() {
-    this.service.getWantedBookByUserId(-1, 1, 6).subscribe(res => {
+    this.service.getWantedBookByUserId(1, 6, -1).subscribe(res => {
       this.books = res.books;
       console.log(this.books);
     });
