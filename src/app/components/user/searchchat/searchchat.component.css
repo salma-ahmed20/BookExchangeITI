@@ -10,6 +10,7 @@ img{ max-width:100%;}
   border: 1px solid #c4c4c4;
   clear: both;
   overflow: hidden;
+  height: 520px;
 }
 .top_spac{ margin: 20px 0 0;}
 
@@ -43,6 +44,11 @@ img{ max-width:100%;}
 .chat_img {
   float: left;
   width: 11%;
+ 
+}
+.chat_img .img-circle{
+ 
+border-radius: 50%;  
 }
 .chat_ib {
   float: left;
@@ -57,7 +63,6 @@ img{ max-width:100%;}
   padding: 18px 16px 10px;
 }
 .inbox_chat { height: 550px; overflow-y: scroll;}
-
 .active_chat{ background:#ebebeb;}
 
 .incoming_msg_img {
