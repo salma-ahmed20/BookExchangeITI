@@ -15,8 +15,11 @@ import { RequestsService } from "src/app/services/requests/requests.service";
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"]
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements OnInit {
   @ViewChildren("accountBar") account: QueryList<any>;
+  showRequests: boolean;
+  showChats: boolean;
+  showLoginAndSignUp: boolean = true;
 
   ngAfterViewInit(): void {
     this.settingToggler();
@@ -30,8 +33,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     //   this.stickyHeader();
     // });
   }
-  showRequests: boolean;
-  showLoginAndSignUp: boolean = true;
+
   constructor(
     private router: Router,
     private login: LoginService,
@@ -60,6 +62,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   onShowMinRequestsClick() {
     this.showRequests = true;
   }
+  onShowMinChatsClick() {
+    this.showChats = true;
+  }
   toggleRequestStates(event) {
     this.showRequests = event;
   }
@@ -74,6 +79,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       e.preventDefault();
       settingContainer.toggleClass("");
     });
+  }
+  toggleChatStates(event) {
+    this.showChats = event;
   }
   searchToggler() {
     var trigger = $(".search__active"),

@@ -24,13 +24,24 @@ export class UserService {
   getUserHaveBook(pageNumber, pageSize, userId?): Observable<UserHaveBook> {
     if (!userId) {
       userId = -1;
+      // getUserHaveBook(userId?): Observable<Book[]> {
+      //   let id;
+      //   if (!userId && this.service.isLoggedIn()) {
+      //     let jwtHelper = new JwtHelperService();
+
+      //     let token = localStorage.getItem("token");
+      //     id = jwtHelper.decodeToken(token)["LogUserId"];
+      //   } else {
+      //     this.router.navigate(["notFount"]);
+      //     return;
+      //   }
+      return this.http.get<UserHaveBook>(
+        "http://localhost:52558/api/home/want/" + userId,
+        {
+          params: { userId, pageNumber, pageSize }
+        }
+      );
     }
-    return this.http.get<UserHaveBook>(
-      "http://localhost:52558/api/home/want/" + userId,
-      {
-        params: { userId, pageNumber, pageSize }
-      }
-    );
   }
 
   getUserWantBook(userId?): Observable<Book[]> {
@@ -45,4 +56,11 @@ export class UserService {
 
   //  return this.http.patch<User>('http://localhost:52558/Help/Api/PUT-api-User/'++);
   //}
+  getUserById(userId: number): Observable<User> {
+    console.log(userId);
+
+    return this.http.get<User>(
+      "http://localhost:52558/api/user?id=" + userId + "&type=full"
+    );
+  }
 }
