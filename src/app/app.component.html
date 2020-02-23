@@ -1,14 +1,15 @@
+<!-- <app-userhavebooks></app-userhavebooks>  -->
 <div class="wrapper" id="wrapper">
 
-     <!-- <app-header></app-header>
+    <app-header></app-header>
+    <!-- <app-booklist></app-booklist> -->
+    <!-- <app-search></app-search> -->
 
     <router-outlet></router-outlet>
-    <router-outlet name="userOutlet"></router-outlet>
-    <app-modal></app-modal>
+    <!-- <app-usereditprofile></app-usereditprofile> -->
 
-    <app-footer></app-footer> 
-     -->
-    <app-add-book></app-add-book>
-
-
+    <app-footer></app-footer>
+    <app-search-popup></app-search-popup>
+    <router-outlet name="modal"></router-outlet>
+    <!-- <app-add-request></app-add-request> -->
 </div>

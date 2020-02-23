@@ -28,6 +28,6 @@ export class LoginPageComponent {
   }
   login(value) {
     this.service.login(value);
-    console.log(value);
+    // console.log(value);
   }
 }

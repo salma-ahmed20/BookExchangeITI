@@ -1,7 +1,9 @@
+import { UserService } from "./../user/user.service";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { Subject } from "rxjs";
+import { User } from "src/app/models/user.model";
 
 @Injectable({
   providedIn: "root"
@@ -9,6 +11,7 @@ import { Subject } from "rxjs";
 export class LoginService {
   loggedIn: Subject<boolean>;
   isUserAdmin: Subject<boolean>;
+  currentUser: User;
   constructor(private http: HttpClient) {
     this.loggedIn = new Subject();
     this.isUserAdmin = new Subject();
@@ -20,11 +23,13 @@ export class LoginService {
         res => {
           var token = res;
           localStorage.setItem("token", token);
-          this.isLoggedIn();
+          this.loggedIn.next(true);
+          console.log(res);
+
           return true;
         },
         err => {
-          this.isLoggedIn();
+          this.loggedIn.next(false);
           return false;
         }
       );
@@ -57,5 +62,21 @@ export class LoginService {
   logout() {
     localStorage.removeItem("token");
     this.loggedIn.next(false);
+  }
+  getCurrentLogginId() {
+    let jwtHelper = new JwtHelperService();
+    let token = localStorage.getItem("token");
+    return jwtHelper.decodeToken(token)["LogUserId"];
+  }
+  isLoggedInNew() {
+    let jwtHelper = new JwtHelperService();
+    let token = localStorage.getItem("token");
+    if (!token) {
+      return false;
+    }
+    // console.log(jwtHelper.decodeToken(token));
+
+    let isTokenExpired = jwtHelper.isTokenExpired(token);
+    return !isTokenExpired;
   }
 }

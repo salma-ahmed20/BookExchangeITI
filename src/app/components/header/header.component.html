@@ -108,20 +108,20 @@
                     <li class="shop_search">
                         <a class="search__active" href="#"></a>
                     </li>
-                    <li class="wishlist">
-                        <!-- <a data-toggle="modal" href="#sharedmodal" [routerLink]='[{ outlets:  { modalShared  : ["book/add"] } }]'></a> -->
-                        <!-- <a data-toggle="modal" [routerLink]='[{outlets: { modalShared: ["book","add"]}}]' href="#sharedmodal">add</a> -->
-                        <a data-toggle="modal" href="#sharedmodal" (click)="test()">add</a>
-
+                    <li *ngIf="!showLoginAndSignUp" class="wishlist">
+                        <a (click)="test('addBook')">add</a>
+                        <jw-modal id="addBook">
+                            <app-add-book></app-add-book>
+                        </jw-modal>
                     </li>
-                    <li class="shopcart">
+                    <li *ngIf="!showLoginAndSignUp" class="shopcart">
                         <a class="cartbox_active" (click)="onShowMinRequestsClick()"><span class="product_qun">3</span></a>
                         <!-- Start Shopping Cart -->
                         <app-requests [showRequests]="showRequests" (closeRequests)="toggleRequestStates($event)"></app-requests>
                         <!-- End Shopping Cart -->
                     </li>
                     <li *ngIf="showLoginAndSignUp">
-                        <span style="margin-right: 10px;"><a routerLink="login">Sign In</a></span>
+                        <span style="margin-right: 10px; margin-left: 10px;"><a routerLink="login">Sign In</a></span>
                     </li>
                     <li *ngIf="showLoginAndSignUp">
                         |
@@ -129,56 +129,10 @@
                     <li *ngIf="showLoginAndSignUp">
                         <span style="margin-left: 10px;"><a routerLink="signup">    Create An Account</a></span>
                     </li>
-                    <!-- <li class="setting__bar__icon">
-                        <a class="setting__active" href="#"></a>
+                    <li #accountBar *ngIf="!showLoginAndSignUp" class="setting__bar__icon">
+                        <a class="setting__active"></a>
                         <div class="searchbar__content setting__block">
                             <div class="content-inner">
-                                <div class="switcher-currency">
-                                    <strong class="label switcher-label">
-                                            <span>Currency</span>
-                                        </strong>
-                                    <div class="switcher-options">
-                                        <div class="switcher-currency-trigger">
-                                            <span class="currency-trigger">USD - US Dollar</span>
-                                            <ul class="switcher-dropdown">
-                                                <li>GBP - British Pound Sterling</li>
-                                                <li>EUR - Euro</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="switcher-currency">
-                                    <strong class="label switcher-label">
-                                            <span>Language</span>
-                                        </strong>
-                                    <div class="switcher-options">
-                                        <div class="switcher-currency-trigger">
-                                            <span class="currency-trigger">English01</span>
-                                            <ul class="switcher-dropdown">
-                                                <li>English02</li>
-                                                <li>English03</li>
-                                                <li>English04</li>
-                                                <li>English05</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="switcher-currency">
-                                    <strong class="label switcher-label">
-                                            <span>Select Store</span>
-                                        </strong>
-                                    <div class="switcher-options">
-                                        <div class="switcher-currency-trigger">
-                                            <span class="currency-trigger">Fashion Store</span>
-                                            <ul class="switcher-dropdown">
-                                                <li>Furniture</li>
-                                                <li>Shoes</li>
-                                                <li>Speaker Store</li>
-                                                <li>Furniture</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="switcher-currency">
                                     <strong class="label switcher-label">
                                             <span>My Account</span>
@@ -186,18 +140,19 @@
                                     <div class="switcher-options">
                                         <div class="switcher-currency-trigger">
                                             <div class="setting__menu">
-                                                <span><a href="#">Compare Product</a></span>
-                                                <span><a href="#">My Account</a></span>
+                                                <!-- <span><a href="#">Compare Product</a></span> -->
+                                                <span><a  [routerLink]="['user',login.getCurrentLogginId()]" >My Account</a></span>
                                                 <span><a href="#">My Wishlist</a></span>
-                                                <span><a href="#">Sign In</a></span>
-                                                <span><a href="#">Create An Account</a></span>
+                                                <!-- <span><a href="#">Sign In</a></span>
+                                                <span><a href="#">Create An Account</a></span> -->
+                                                <span><a (click)="login.logout()">Log Out</a></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>

@@ -4,6 +4,7 @@ import { Component, OnInit, ViewChild, ViewChildren } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { from } from "rxjs";
 import { Book } from "src/app/models/book_item.model";
+import { ModalService } from "../../shared/_modal";
 
 @Component({
   selector: "app-add-book",
@@ -24,7 +25,8 @@ export class AddBookComponent implements OnInit {
 
   constructor(
     private service: ServiceNameService,
-    private bookService: BooksService
+    private bookService: BooksService,
+    private modalService: ModalService
   ) {}
 
   ngOnInit() {}
@@ -60,5 +62,8 @@ export class AddBookComponent implements OnInit {
     console.log(this.bookService.addBook(this.form.value));
 
     console.log(this.form.value);
+  }
+  closeModale(id: string) {
+    this.modalService.close(id);
   }
 }
