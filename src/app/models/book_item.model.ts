@@ -5,4 +5,5 @@ export class Book {
   Photo_Url: string;
   Author_Name: string;
   Description: string;
+  BookCondition: string;
 }

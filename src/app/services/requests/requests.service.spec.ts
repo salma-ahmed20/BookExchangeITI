@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RequestsMinService } from './requests-min.service';
+import { RequestsService } from './requests.service';
 
-describe('RequestsMinService', () => {
+describe('RequestsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RequestsMinService = TestBed.get(RequestsMinService);
+    const service: RequestsService = TestBed.get(RequestsService);
     expect(service).toBeTruthy();
   });
 });

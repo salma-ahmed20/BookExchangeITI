@@ -883,7 +883,7 @@ a {
 }
 
 .bg-image--6 {
-    background-image: url("http://demo.devitems.com/boighor-v3/images/bg/6.jpg");
+    background-image: url("https://demo.hasthemes.com/boighor-preview/boighor/images/bg/4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -2210,6 +2210,7 @@ Elements Styles
 .minicart-content-wrapper {
     width: 390px;
     padding: 25px 20px;
+    padding-bottom: 0px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
     margin: 4px 0 0;
     min-width: 100%;
@@ -2308,7 +2309,7 @@ Elements Styles
     border-image: none;
     border-style: solid none;
     border-width: 1px 0;
-    margin: 20px -20px 0;
+    /* margin: 20px -20px 0; */
     overflow-x: auto;
     padding: 15px;
 }

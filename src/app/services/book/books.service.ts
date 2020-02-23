@@ -1,3 +1,4 @@
+import { UserHaveBook } from "../../models/user-want.book.model";
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
@@ -32,5 +33,14 @@ export class BooksService {
           console.log(err);
         }
       );
+  }
+  getBookById(id: number): Observable<Book> {
+    return this.http.get<Book>(this.baseUrl + "/Books/" + id);
+  }
+  getHaveBookByUserId(pageNumber, pageSize, userId?): Observable<UserHaveBook> {
+    // debugger;
+    return this.http.get<UserHaveBook>("http://localhost:52558/api/home/have", {
+      params: { pageNumber, pageSize, userId }
+    });
   }
 }
