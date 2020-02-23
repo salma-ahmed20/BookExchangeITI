@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-import { RequestItemComponent } from "./request-item/request-item.component";
-import { AddRequestComponent } from "./add-request/add-request.component";
-import { RouterModule, Router } from "@angular/router";
-=======
-import { BooklistComponent } from './booklist/booklist.component';
->>>>>>> bb60a094ab31b2ad21d0312966c3cc0048421818
+import { AddRequestComponent } from './add-request/add-request.component';
 import { UserItemComponent } from "./user-item/user-item.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -15,6 +9,8 @@ import { BookOverviewComponent } from "./book-overview/book-overview.component";
 import { BooklistComponent } from "./booklist/booklist.component";
 import { ModalModule } from "./_modal";
 import { AutocompleteLibModule } from "angular-ng-autocomplete";
+import { RequestItemComponent } from './request-item/request-item.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
