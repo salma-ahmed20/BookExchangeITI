@@ -1,10 +1,13 @@
+<<<<<<< HEAD
 import { RequestItemComponent } from "./request-item/request-item.component";
 import { AddRequestComponent } from "./add-request/add-request.component";
 import { RouterModule, Router } from "@angular/router";
+=======
+import { BooklistComponent } from './booklist/booklist.component';
+>>>>>>> bb60a094ab31b2ad21d0312966c3cc0048421818
 import { UserItemComponent } from "./user-item/user-item.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { BookListComponent } from "../home/book-list/book-list.component";
 import { ChangeBackgroundDirective } from "src/app/directives/change-background.directive";
 import { BookItemComponent } from "./book-item/book-item.component";
 import { UserListComponent } from "../home/user-list/user-list.component";
@@ -15,7 +18,7 @@ import { AutocompleteLibModule } from "angular-ng-autocomplete";
 
 @NgModule({
   declarations: [
-    BookListComponent,
+    BooklistComponent,
     ChangeBackgroundDirective,
     BookItemComponent,
     UserListComponent,
@@ -27,7 +30,7 @@ import { AutocompleteLibModule } from "angular-ng-autocomplete";
   ],
   imports: [CommonModule, ModalModule, RouterModule, AutocompleteLibModule],
   exports: [
-    BookListComponent,
+    BooklistComponent,
     ChangeBackgroundDirective,
     BookItemComponent,
     UserListComponent,

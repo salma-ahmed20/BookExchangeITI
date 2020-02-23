@@ -23,3 +23,8 @@ google fonts
 /*styles*/
 
 @import "assets/css/style.css";
+
+  @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons");
+ @import url("https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
+ 
+  @import "assets/css/material-dashboard.css";
