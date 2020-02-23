@@ -10,6 +10,7 @@ import { UserhavebooksComponent } from "./userhavebooks/userhavebooks.component"
 import { SearchchatComponent } from "./searchchat/searchchat.component";
 import { ComplaintsComponent } from "./complaints/complaints.component";
 import { RequestsPageComponent } from "./requests-page/requests-page.component";
+import { ChatComponent } from "./chat/chat.component";
 
 const routes: Routes = [
   {
@@ -20,7 +21,11 @@ const routes: Routes = [
       { path: "editprofile", component: UsereditprofileComponent },
       { path: "wantedbooks", component: UserwantbooksComponent },
       { path: "havedbooks", component: UserhavebooksComponent },
-      { path: "searchchat", component: SearchchatComponent },
+      {
+        path: "searchchat",
+        component: SearchchatComponent,
+        children: [{ path: ":id", component: ChatComponent }]
+      },
       { path: "complaint", component: ComplaintsComponent },
       { path: "requests", component: RequestsPageComponent }
     ]

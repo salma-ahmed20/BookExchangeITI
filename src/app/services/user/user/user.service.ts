@@ -9,6 +9,7 @@ import { Book } from "src/app/models/book_item.model";
 import { User } from "src/app/models/user.model";
 import { Observable } from "rxjs";
 import { JsonPipe } from "@angular/common";
+import { Chat, ChatContainer } from "src/app/models/chat.model";
 
 @Injectable({
   providedIn: "root"
@@ -61,6 +62,18 @@ export class UserService {
 
     return this.http.get<User>(
       "http://localhost:52558/api/user?id=" + userId + "&type=full"
+    );
+  }
+  getChatById(userId: number): Observable<ChatContainer[]> {
+    return this.http.get<ChatContainer[]>(
+      "http://localhost:52558/api/chat/getcurrentuserchat?userId=" + userId
+    );
+  }
+
+  getChat(convensionId: string): Observable<ChatContainer[]> {
+    return this.http.get<ChatContainer[]>(
+      "http://localhost:52558/api/chat/getChatByConversationId?conversationId=" +
+        convensionId
     );
   }
 }
